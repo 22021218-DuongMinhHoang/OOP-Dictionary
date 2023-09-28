@@ -1,0 +1,8 @@
+Card    The
+Hello   Xin chao
+Cat     Meo
+York    Long trang trung
+Dog     Cho
+Car     Xe
+Zoo     So thu
+Bowl    Cai bat
