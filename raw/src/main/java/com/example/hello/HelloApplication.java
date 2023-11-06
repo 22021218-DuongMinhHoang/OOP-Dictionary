@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
     public static Dictionary myDict = new Dictionary();
     @Override
     public void start(Stage stage) throws IOException {
-        myDict.addFromFile("dictionaries.txt");
+        myDict.addFromFile("E:\\study_document\\JAVA\\JAVA_OOP\\OOP-Dictionary\\raw\\src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
