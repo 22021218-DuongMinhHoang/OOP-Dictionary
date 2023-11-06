@@ -47,6 +47,8 @@ public class AddWordController {
             }
 
         }
+        Word.clear();
+        meaning.clear();
     }
 
     @FXML
