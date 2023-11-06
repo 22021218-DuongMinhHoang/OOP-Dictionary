@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "DictionaryCommandLine/src",
+        "raw/src/main/java/com/example/hello"
+    ]
+}
