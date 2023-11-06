@@ -68,6 +68,12 @@ public class hellocontroller {
 
     @FXML
     void remove(ActionEvent event) {
+        try {
+            new SceneSwitch(pane, "remove-view.fxml");
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

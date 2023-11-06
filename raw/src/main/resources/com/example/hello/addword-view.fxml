@@ -31,7 +31,7 @@
       </font>
     </Text>
     <Text fill="$x1" font="$x2" layoutX="149.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
-    <Text fx:id="notifi" fill="$x1" layoutX="334.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+    <Text fx:id="notifi" fill="$x1" layoutX="241.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hello">
       <font>
         <Font size="20.0" />
       </font>
