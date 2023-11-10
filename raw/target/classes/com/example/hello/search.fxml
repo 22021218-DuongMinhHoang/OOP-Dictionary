@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -35,10 +36,11 @@
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/us.png" />
+                  <Image url="@assets/uk.png" />
                </image>
             </ImageView>
          </graphic>
     </Button>
+      <WebView layoutX="480.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" />
   </children>
 </Pane>
