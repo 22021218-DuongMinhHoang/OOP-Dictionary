@@ -45,9 +45,8 @@ public class hellocontroller {
     @FXML
     void Search(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "search.fxml");
-        }
-        catch(IOException e){
+            new SceneSwitch(pane, "data\\SearchBar\\Search.fxml");
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -56,8 +55,7 @@ public class hellocontroller {
     void add(ActionEvent event) {
         try {
             new SceneSwitch(pane, "addword-view.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -70,8 +68,7 @@ public class hellocontroller {
     void remove(ActionEvent event) {
         try {
             new SceneSwitch(pane, "remove-view.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -80,8 +77,7 @@ public class hellocontroller {
     void startprogram(MouseEvent event) {
         try {
             new SceneSwitch(pane, "search.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -96,7 +92,6 @@ public class hellocontroller {
         assert remove != null : "fx:id=\"remove\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
-
 
     }
 }
