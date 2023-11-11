@@ -1,4 +1,5 @@
 package com.example.hello.controller;
+
 //raw\src\main\resources\com\example\hello\controller\resources\com\example\hello\controller
 import java.io.IOException;
 import java.net.URL;
@@ -46,8 +47,7 @@ public class hellocontroller {
     void Search(ActionEvent event) {
         try {
             new SceneSwitch(pane, "\\fxml\\search.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -56,8 +56,7 @@ public class hellocontroller {
     void add(ActionEvent event) {
         try {
             new SceneSwitch(pane, "\\fxml\\addword-view.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -70,8 +69,7 @@ public class hellocontroller {
     void remove(ActionEvent event) {
         try {
             new SceneSwitch(pane, "\\fxml\\remove-view.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -80,8 +78,7 @@ public class hellocontroller {
     void startprogram(MouseEvent event) {
         try {
             new SceneSwitch(pane, "\\fxml\\search.fxml");
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -96,7 +93,6 @@ public class hellocontroller {
         assert remove != null : "fx:id=\"remove\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
-
 
     }
 }
