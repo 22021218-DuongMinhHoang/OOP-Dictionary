@@ -3,5 +3,10 @@
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
-    "terminal.integrated.shellArgs.windows": ["-NoExit", "-Command", "chcp 65001"]
+    "terminal.integrated.shellArgs.windows": [
+        "-NoExit",
+        "-Command",
+        "chcp 65001"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
