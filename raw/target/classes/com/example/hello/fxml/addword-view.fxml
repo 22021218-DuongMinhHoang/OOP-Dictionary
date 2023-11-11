@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="550.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.example.hello.data.AddWordController">
+<Pane prefHeight="550.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.example.hello.controller.AddWordController">
   <children>
     <Text id="notifi" fill="#10cc00" layoutX="149.0" layoutY="65.0" scaleX="1.1441176470588235" scaleY="2.4783864118895966" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the word that you want to add">
       <font>

@@ -1,0 +1,10 @@
+com\example\hello\data\TranslatorApi.class
+com\example\hello\data\DictionaryManagement.class
+com\example\hello\data\TextToSpeech.class
+com\example\hello\data\Word.class
+com\example\hello\data\SoundPlayer$1.class
+com\example\hello\data\SceneSwitch.class
+com\example\hello\data\SoundPlayer.class
+com\example\hello\HelloApplication.class
+com\example\hello\data\Dictionary.class
+com\example\hello\Sample.class
