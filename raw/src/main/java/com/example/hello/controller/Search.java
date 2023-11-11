@@ -1,6 +1,10 @@
-package com.example.hello.data;
+package com.example.hello.controller;
 
 import com.example.hello.HelloApplication;
+import com.example.hello.data.Dictionary;
+import com.example.hello.data.SoundPlayer;
+import com.example.hello.data.Word;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

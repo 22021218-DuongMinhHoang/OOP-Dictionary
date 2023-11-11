@@ -1,8 +1,9 @@
-package com.example.hello.data;
+package com.example.hello.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.hello.data.Word;
 import com.example.hello.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
