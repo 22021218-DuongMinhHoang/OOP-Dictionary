@@ -79,7 +79,7 @@ public class hellocontroller {
     @FXML
     void startprogram(MouseEvent event) {
         try {
-            new SceneSwitch(pane, "search.fxml");
+            new SceneSwitch(pane, "\\fxml\\search.fxml");
         }
         catch(IOException e){
             e.printStackTrace();
