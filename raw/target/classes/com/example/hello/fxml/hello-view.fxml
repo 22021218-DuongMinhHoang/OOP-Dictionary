@@ -16,8 +16,9 @@
       </font>
       <items>
         <MenuItem fx:id="search" mnemonicParsing="false" onAction="#Search" text="Search" />
-        <MenuItem fx:id="remove" mnemonicParsing="false" onAction="#remove" text="Remove" />
+            <MenuItem fx:id="textTranslate" mnemonicParsing="false" onAction="#translateText" text="Translate text" />
         <MenuItem fx:id="add" mnemonicParsing="false" onAction="#add" text="Add" />
+        <MenuItem fx:id="remove" mnemonicParsing="false" onAction="#remove" text="Remove" />
         <MenuItem fx:id="game" mnemonicParsing="false" onAction="#game" text="Vocab Game" />
       </items>
     </MenuButton>

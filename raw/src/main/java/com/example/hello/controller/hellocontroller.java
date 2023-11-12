@@ -1,9 +1,6 @@
 package com.example.hello.controller;
 
 //raw\src\main\resources\com\example\hello\controller\resources\com\example\hello\controller
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import com.example.hello.data.SceneSwitch;
 import javafx.event.ActionEvent;
@@ -14,6 +11,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class hellocontroller {
     @FXML
@@ -42,11 +43,14 @@ public class hellocontroller {
 
     @FXML
     private ImageView start;
+    @FXML
+    private MenuItem textTranslate;
+
 
     @FXML
     void Search(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\search.fxml");
+            new SceneSwitch(pane, "fxml/search.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,7 +59,7 @@ public class hellocontroller {
     @FXML
     void add(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\addword-view.fxml");
+            new SceneSwitch(pane, "fxml/addword-view.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +72,7 @@ public class hellocontroller {
     @FXML
     void remove(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\remove-view.fxml");
+            new SceneSwitch(pane, "fxml/remove-view.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,12 +81,20 @@ public class hellocontroller {
     @FXML
     void startprogram(MouseEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\search.fxml");
+            new SceneSwitch(pane, "fxml/search.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    @FXML
+    void translateText(ActionEvent event) {
+        try {
+            new SceneSwitch(pane, "fxml/SentencesTranslating.fxml");
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
     @FXML
     void initialize() {
         assert add != null : "fx:id=\"add\" was not injected: check your FXML file 'hello-view.fxml'.";
