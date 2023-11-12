@@ -1,6 +1,7 @@
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\Word.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\HelloApplication.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\searchbar\SearchController.java
+<<<<<<< Updated upstream
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\helloapp\hellocontroller.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\speech\SoundPlayer.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\ggtranslator\TranslatorApi.java
@@ -9,3 +10,10 @@ c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\gg
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\ggtranslator\SentenceToSpeech.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\searchbar\Connect.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\speech\TextToSpeech.java
+=======
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\Search.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\SceneSwitch.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\searchbar\Word.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\hellocontroller.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\searchbar\Connect.java
+>>>>>>> Stashed changes
