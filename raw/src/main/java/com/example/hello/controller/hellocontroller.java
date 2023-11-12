@@ -50,7 +50,7 @@ public class hellocontroller {
     @FXML
     void Search(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\search.fxml");
+            new SceneSwitch(pane, "fxml/search.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class hellocontroller {
     @FXML
     void add(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\addword-view.fxml");
+            new SceneSwitch(pane, "fxml/addword-view.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class hellocontroller {
     @FXML
     void remove(ActionEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\remove-view.fxml");
+            new SceneSwitch(pane, "fxml/remove-view.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -81,7 +81,7 @@ public class hellocontroller {
     @FXML
     void startprogram(MouseEvent event) {
         try {
-            new SceneSwitch(pane, "\\fxml\\search.fxml");
+            new SceneSwitch(pane, "fxml/search.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
