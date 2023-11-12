@@ -1,7 +1,9 @@
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\TranslatorApi.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\SentencesTranslating.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\TextToSpeech.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\SoundPlayer.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\AddWordController.java
+c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\SentenceToSpeech.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\Remove.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\DictionaryManagement.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\Dictionary.java
@@ -12,5 +14,4 @@ c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\co
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\data\SceneSwitch.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\SearchBar\Word.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\controller\hellocontroller.java
-c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\Sample.java
 c:\Users\STMTLS\Desktop\IT\OOP-Dictionary\raw\src\main\java\com\example\hello\SearchBar\Connect.java
