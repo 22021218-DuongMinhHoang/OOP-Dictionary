@@ -16,6 +16,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxml/hello-view.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setTitle("HELLO DICTIONARY");

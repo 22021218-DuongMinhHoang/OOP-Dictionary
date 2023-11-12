@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Connect",
+            "request": "launch",
+            "mainClass": "com.example.hello.SearchBar.Connect",
+            "projectName": "raw"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
