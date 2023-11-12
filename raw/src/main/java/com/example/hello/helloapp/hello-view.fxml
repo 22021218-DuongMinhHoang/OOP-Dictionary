@@ -31,7 +31,7 @@
         </Label>
         <ImageView fx:id="start" fitHeight="150.0" fitWidth="200.0" layoutX="259.0" layoutY="313.0" onMouseClicked="#startprogram" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/com/example/hello/assets/start.png" />
+                  <Image url="@../assets/start.png" />
                </image>
         </ImageView>
       </children>
