@@ -1,4 +1,4 @@
-package com.example.hello.SearchBar;
+package com.example.hello.searchbar;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import com.example.hello.data.Word;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,7 +36,7 @@ public class Connect {
     Connection conn = null;
     try {
       // db parameters
-      String url = "jdbc:sqlite:src\\main\\java\\com\\example\\hello\\SearchBar\\dict_hh.db";
+      String url = "jdbc:sqlite:src\\main\\java\\com\\example\\hello\\searchbar\\dict_hh.db";
       // create a connection to the database
       conn = DriverManager.getConnection(url);
 
