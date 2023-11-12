@@ -1,6 +1,6 @@
 package com.example.hello.management;
 
-import com.example.hello.main.HelloApplication;
+import com.example.hello.HelloApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
