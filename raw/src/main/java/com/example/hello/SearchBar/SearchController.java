@@ -1,4 +1,4 @@
-package com.example.hello.SearchBar;
+package com.example.hello.searchbar;
 
 import java.net.URL;
 import java.util.LinkedList;
@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import com.example.hello.data.Word;
 
 public class SearchController implements Initializable {
   Timer searchTimer;
