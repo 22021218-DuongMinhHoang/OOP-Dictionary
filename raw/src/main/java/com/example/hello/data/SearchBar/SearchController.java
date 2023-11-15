@@ -8,26 +8,23 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.example.hello.data.SoundPlayer;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Orientation;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 
 public class SearchController implements Initializable {
   Timer searchTimer;
   ObservableList<Word> hq;
-
+  Word currentWord;
   private class searchTask extends TimerTask {
     @Override
     public void run() {
@@ -50,6 +47,34 @@ public class SearchController implements Initializable {
   @FXML
   Label searchResult;
 
+  @FXML
+  private Button ukButton;
+
+  @FXML
+  private Button usButton;
+
+  @FXML
+  void usSound(ActionEvent event) {
+      if(currentWord != null){
+        new SoundPlayer(currentWord.getWord().toLowerCase(), SoundPlayer.US);
+        System.out.println("US sound");
+      }
+      else{
+        System.out.println("null");
+      }
+  }
+
+  @FXML
+  void ukSound(ActionEvent event) {
+      if(currentWord != null){
+        new SoundPlayer(currentWord.getWord().toLowerCase(), SoundPlayer.UK);
+        System.out.println("UK sound");
+      }
+      else{
+        System.out.println("null");
+      }
+  }
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     // TODO Auto-generated method stub
@@ -60,6 +85,7 @@ public class SearchController implements Initializable {
       @Override
       public void changed(ObservableValue<? extends Word> observable, Word oldValue, Word newValue) {
         if (optionsBox.getItems().size() != 0) {
+          currentWord = newValue;
           searchResult.setText(newValue.getFullDescription());
           searchBar.setText("");
         }

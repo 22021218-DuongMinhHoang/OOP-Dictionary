@@ -45,6 +45,10 @@ public class Word {
     return word + "    " + description;
   }
 
+  public String getWord(){
+
+    return this.word;
+  }
   public static void main(String[] args) {
 
   }

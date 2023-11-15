@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -7,7 +11,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<<<<<<< Updated upstream:raw/src/main/java/com/example/hello/data/SearchBar/Search.fxml
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.data.SearchBar.SearchController">
+=======
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.SearchBar.SearchController">
+>>>>>>> Stashed changes:raw/src/main/java/com/example/hello/SearchBar/Search.fxml
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,4 +29,26 @@
          </children>
       </StackPane>
    </center>
+   <left>
+      <Button fx:id="usButton" mnemonicParsing="false" onAction="#usSound" prefHeight="30.0" prefWidth="40.0" BorderPane.alignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/com/example/hello/assets/us.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </left>
+   <right>
+      <Button fx:id="ukButton" mnemonicParsing="false" onAction="#ukSound" prefHeight="30.0" prefWidth="40.0" BorderPane.alignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/com/example/hello/assets/uk.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </right>
 </BorderPane>
