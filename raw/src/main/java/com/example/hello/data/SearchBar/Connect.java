@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:raw/src/main/java/com/example/hello/data/SearchBar/Connect.java
 package com.example.hello.data.SearchBar;
+=======
+package com.example.hello.data.Searchbar;
+>>>>>>> Stashed changes:raw/src/main/java/com/example/hello/SearchBar/Connect.java
 
 import java.sql.Connection;
 import java.sql.DriverManager;

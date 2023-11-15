@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="550.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.example.hello.data.AddWordController">
+  <children>
+    <Text id="notifi" fill="#10cc00" layoutX="149.0" layoutY="65.0" scaleX="1.1441176470588235" scaleY="2.4783864118895966" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the word that you want to add">
+      <font>
+        <Font name="Arial Bold" size="20.0" />
+      </font>
+    </Text>
+    <TextField fx:id="Word" layoutX="250.0" layoutY="137.0" prefHeight="100.951171875" prefWidth="229.0" text="" />
+    <TextField id="Word" fx:id="meaning" layoutX="250.0" layoutY="275.0" prefHeight="100.951171875" prefWidth="229.0" text="" />
+    <Button fx:id="add" layoutX="312.0" layoutY="479.0" mnemonicParsing="false" onAction="#addWord" onMouseClicked="#addWord" prefHeight="42.0" prefWidth="104.0" text="Add">
+      <font>
+        <Font name="System Bold" size="15.0" />
+      </font>
+      <textFill>
+        <Color blue="0.096" green="0.600" red="0.000" fx:id="x1" />
+      </textFill>
+    </Button>
+    <Text fill="$x1" layoutX="149.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word">
+      <font>
+        <Font name="System Bold" size="20.0" fx:id="x2" />
+      </font>
+    </Text>
+    <Text fill="$x1" font="$x2" layoutX="149.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+    <Text fx:id="notifi" fill="$x1" layoutX="241.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hello">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Text>
+  </children>
+</Pane>

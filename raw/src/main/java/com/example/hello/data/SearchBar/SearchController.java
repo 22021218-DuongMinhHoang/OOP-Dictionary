@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:raw/src/main/java/com/example/hello/data/SearchBar/SearchController.java
 package com.example.hello.data.SearchBar;
+=======
+package com.example.hello.data.Searchbar;
+>>>>>>> Stashed changes:raw/src/main/java/com/example/hello/SearchBar/SearchController.java
 
 import java.net.URL;
 import java.util.LinkedList;
