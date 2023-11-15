@@ -15,12 +15,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
-<<<<<<< Updated upstream
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-=======
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxml/hello-view.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
->>>>>>> Stashed changes
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setTitle("HELLO DICTIONARY");
