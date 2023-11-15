@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -47,6 +48,9 @@ public class hellocontroller {
     private MenuItem textTranslate;
 
     @FXML
+    private Tab t1;
+
+    @FXML
     void Search(ActionEvent event) {
         try {
             new SceneSwitch(pane,
@@ -82,6 +86,7 @@ public class hellocontroller {
     void startprogram(MouseEvent event) {
         try {
             new SceneSwitch(pane, "searchbar/search.fxml");
+            System.out.println("changed");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -106,6 +111,13 @@ public class hellocontroller {
         assert remove != null : "fx:id=\"remove\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
-
+        Pane p = new Pane();
+        try {
+            new SceneSwitch(p, "searchbar/search.fxml");
+            t1.setContent(p);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
