@@ -40,7 +40,7 @@ public class hellocontroller {
     private MenuItem remove;
 
     @FXML
-    private MenuItem search;
+    private Pane search;
 
     @FXML
     private ImageView start;
@@ -103,7 +103,7 @@ public class hellocontroller {
 
     @FXML
     void initialize() {
-        
+
         assert add != null : "fx:id=\"add\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert anchorPane != null : "fx:id=\"anchorPane\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert game != null : "fx:id=\"game\" was not injected: check your FXML file 'hello-view.fxml'.";
@@ -112,13 +112,14 @@ public class hellocontroller {
         assert remove != null : "fx:id=\"remove\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
-        Pane p = new Pane();
+
         try {
-            new SceneSwitch(p, "searchbar/search.fxml");
-            t1.setContent(p);
+            new SceneSwitch(search, "searchbar/search.fxml");
+            // p.setScaleShape(true);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
 }

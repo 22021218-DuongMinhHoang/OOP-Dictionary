@@ -21,8 +21,10 @@ public class HelloApplication extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
+
         stage.setTitle("HELLO DICTIONARY");
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 

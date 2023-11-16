@@ -10,23 +10,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.helloapp.hellocontroller">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.helloapp.hellocontroller">
   <children>
-    <Pane fx:id="pane" layoutX="36.0" layoutY="27.0" prefHeight="550.0" prefWidth="750.0" visible="false">
-      <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="50.0" prefHeight="87.0" prefWidth="674.0" text="Welcome to Hello Dictionary" textFill="#41cc00">
-          <font>
-            <Font name="Arial Bold" size="40.0" />
-          </font>
-        </Label>
-        <ImageView fx:id="start" fitHeight="150.0" fitWidth="200.0" layoutX="259.0" layoutY="313.0" onMouseClicked="#startprogram" pickOnBounds="true" preserveRatio="true">
+    <Pane fx:id="pane" prefHeight="602.0" prefWidth="900.0" visible="false">
+         <children>
+        <ImageView fx:id="start" fitHeight="142.0" fitWidth="357.0" onMouseClicked="#startprogram" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../resources/com/example/hello/assets/start.png" />
                </image>
         </ImageView>
-      </children>
+         </children>
     </Pane>
-      <TabPane prefHeight="600.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="600.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab closable="false" text="Untitled Tab 1">
                <content>
@@ -37,7 +32,22 @@
                   </ImageView>
                </content>
             </Tab>
-          <Tab fx:id="t1" text="Untitled Tab 2" />
+          <Tab fx:id="t1" text="Untitled Tab 2">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="search" prefHeight="600.0" prefWidth="872.0">
+                           <children>
+                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="674.0" text="Welcome to Hello Dictionary" textFill="#41cc00" wrapText="true">
+                            <font>
+                              <Font name="Arial Bold" size="40.0" />
+                            </font>
+                          </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
         </tabs>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
