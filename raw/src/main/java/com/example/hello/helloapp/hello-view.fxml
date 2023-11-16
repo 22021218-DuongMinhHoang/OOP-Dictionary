@@ -23,15 +23,7 @@
     </Pane>
       <TabPane prefHeight="600.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab closable="false" text="Untitled Tab 1">
-               <content>
-                  <ImageView fitHeight="88.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../resources/com/example/hello/assets/start.png" />
-                     </image>
-                  </ImageView>
-               </content>
-            </Tab>
+          <Tab closable="false" text="Untitled Tab 1" />
           <Tab fx:id="t1" text="Untitled Tab 2">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">

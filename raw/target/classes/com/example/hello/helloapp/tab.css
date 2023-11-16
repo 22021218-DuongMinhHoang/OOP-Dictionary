@@ -1,4 +1,4 @@
-* {
+/* * {
 	-fx-primary-color: #007acc;
 	-fx-secondary-color: #4B6EAF;
 
@@ -22,8 +22,6 @@
 .tab-pane:top *.tab-header-area {
 	-fx-padding: 0 0 0 30;
 	
-	/* NO SPACE LEFT OF FIRST TAB */
-	/* -fx-padding: 0 0 0 30; */
 }
 .tab-pane {
 	-fx-background-color: transparent;
@@ -38,4 +36,14 @@
  	-fx-border-width: 0;
 	-fx-border-insets: 0 0 0 0;
 	-fx-border-radius: 0;
+} 
+*/
+.tab-pane .tab:hover {
+	-fx-background-color: #4B6EAF;
+	-fx-pref-height: 40;
+}
+
+.tab {
+	-fx-background-image: url(resources/buttonFrame.png), url(resources/icons/Google.png);
+	-fx-background-size: cover;
 }
