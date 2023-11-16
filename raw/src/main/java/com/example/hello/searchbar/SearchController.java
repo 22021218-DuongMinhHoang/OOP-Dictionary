@@ -24,8 +24,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import com.example.hello.data.Word;
+import com.example.hello.speech.SoundPlayer;
 
 public class SearchController implements Initializable {
+  private Word currentWord;
   Timer searchTimer;
   ObservableList<Word> hq;
 
@@ -60,6 +62,7 @@ public class SearchController implements Initializable {
 
       @Override
       public void changed(ObservableValue<? extends Word> observable, Word oldValue, Word newValue) {
+        currentWord = newValue;
         if (optionsBox.getItems().size() != 0) {
           searchResult.setText(newValue.getFullDescription());
           searchBar.setText("");
@@ -75,5 +78,27 @@ public class SearchController implements Initializable {
         searchTimer.schedule(new searchTask(), 250);
       }
     });
+  }
+
+   @FXML
+  void usSound(ActionEvent event) {
+      if(currentWord != null){
+        new SoundPlayer(currentWord.getWord().toLowerCase(), SoundPlayer.US);
+        System.out.println("US sound");
+      }
+      else{
+        System.out.println("null");
+      }
+  }
+
+  @FXML
+  void ukSound(ActionEvent event) {
+      if(currentWord != null){
+        new SoundPlayer(currentWord.getWord().toLowerCase(), SoundPlayer.UK);
+        System.out.println("UK sound");
+      }
+      else{
+        System.out.println("null");
+      }
   }
 }

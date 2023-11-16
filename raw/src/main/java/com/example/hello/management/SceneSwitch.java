@@ -10,7 +10,10 @@ import java.io.IOException;
 public class SceneSwitch {
     public SceneSwitch(Pane currentPane, String fxml) throws IOException {
         Pane pane = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource(fxml)));
-        currentPane.getChildren().removeAll();
-        currentPane.getChildren().setAll(pane);
+        // currentPane.getChildren().removeAll();
+        currentPane.getChildren().add(pane);
+        // pane.setPrefSize(currentPane.getWidth(), currentPane.getHeight());
+        pane.setPrefSize(currentPane.getPrefWidth(), currentPane.getPrefHeight());
+
     }
 }

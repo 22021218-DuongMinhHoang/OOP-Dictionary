@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -7,18 +11,44 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.searchbar.SearchController">
-   <center>
-      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.searchbar.SearchController">
+   <children>
+      <Pane prefHeight="550.0" prefWidth="750.0">
          <children>
-            <Label fx:id="searchResult" prefHeight="87.0" prefWidth="198.0" text="" />
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <TextField fx:id="searchBar" prefHeight="47.0" prefWidth="600.0" />
-                  <ListView fx:id="optionsBox" prefHeight="295.0" prefWidth="600.0" />
-               </children>
-            </VBox>
+             <BorderPane layoutX="65.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                 <center>
+                     <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                         <children>
+                             <Label fx:id="searchResult" prefHeight="87.0" prefWidth="198.0" text="" />
+                             <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                     <TextField fx:id="searchBar" prefHeight="47.0" prefWidth="600.0" />
+                                     <ListView fx:id="optionsBox" prefHeight="295.0" prefWidth="600.0" />
+                                 </children>
+                             </VBox>
+                         </children>
+                     </StackPane>
+                 </center>
+             </BorderPane>
+            <Button layoutX="65.0" layoutY="457.0" mnemonicParsing="false" onAction="#usSound" prefHeight="30.0" prefWidth="70.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/us.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="151.0" layoutY="457.0" mnemonicParsing="false" onAction="#ukSound" prefHeight="30.0" prefWidth="70.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/uk.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
-      </StackPane>
-   </center>
-</BorderPane>
+      </Pane>
+   </children>
+</VBox>
