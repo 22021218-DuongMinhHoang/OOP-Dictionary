@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.helloapp.hellocontroller">
+  <children>
+    <Pane fx:id="pane" layoutX="36.0" layoutY="27.0" prefHeight="550.0" prefWidth="750.0" visible="false">
+      <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="50.0" prefHeight="87.0" prefWidth="674.0" text="Welcome to Hello Dictionary" textFill="#41cc00">
+          <font>
+            <Font name="Arial Bold" size="40.0" />
+          </font>
+        </Label>
+        <ImageView fx:id="start" fitHeight="150.0" fitWidth="200.0" layoutX="259.0" layoutY="313.0" onMouseClicked="#startprogram" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/com/example/hello/assets/start.png" />
+               </image>
+        </ImageView>
+      </children>
+    </Pane>
+      <TabPane prefHeight="600.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="Untitled Tab 1">
+               <content>
+                  <ImageView fitHeight="88.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../resources/com/example/hello/assets/start.png" />
+                     </image>
+                  </ImageView>
+               </content>
+            </Tab>
+          <Tab fx:id="t1" text="Untitled Tab 2" />
+        </tabs>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TabPane>
+  </children>
+</AnchorPane>
