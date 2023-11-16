@@ -20,6 +20,7 @@ public class HelloApplication extends Application {
         // FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
         stage.setTitle("HELLO DICTIONARY");
         stage.setScene(scene);
         stage.show();

@@ -103,6 +103,7 @@ public class hellocontroller {
 
     @FXML
     void initialize() {
+        
         assert add != null : "fx:id=\"add\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert anchorPane != null : "fx:id=\"anchorPane\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert game != null : "fx:id=\"game\" was not injected: check your FXML file 'hello-view.fxml'.";
