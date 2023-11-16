@@ -1,0 +1,15 @@
+com\example\hello\ggtranslator\TranslatorApi.class
+com\example\hello\searchbar\SearchController.class
+com\example\hello\helloapp\hellocontroller.class
+com\example\hello\ggtranslator\SentenceToSpeech.class
+com\example\hello\data\Word.class
+com\example\hello\speech\SoundPlayer$1.class
+com\example\hello\HelloApplication.class
+com\example\hello\searchbar\WrongCommandException.class
+com\example\hello\speech\TextToSpeech.class
+com\example\hello\ggtranslator\SentencesTranslating.class
+com\example\hello\searchbar\SearchController$searchTask.class
+com\example\hello\searchbar\Connect.class
+com\example\hello\searchbar\SearchController$1.class
+com\example\hello\management\SceneSwitch.class
+com\example\hello\speech\SoundPlayer.class

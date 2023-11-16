@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Word",
+            "request": "launch",
+            "mainClass": "com.example.hello.data.Word",
+            "projectName": "javafx"
+        },
+        {
+            "type": "java",
+            "name": "HelloApplication",
+            "request": "launch",
+            "mainClass": "com.example.hello.HelloApplication",
+            "projectName": "javafx"
+        },
+        {
+            "type": "java",
             "name": "Connect",
             "request": "launch",
             "mainClass": "com.example.hello.SearchBar.Connect",

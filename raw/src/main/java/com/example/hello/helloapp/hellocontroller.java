@@ -49,8 +49,7 @@ public class hellocontroller {
     @FXML
     void Search(ActionEvent event) {
         try {
-            new SceneSwitch(pane,
-                    "searchbar/search.fxml");
+            new SceneSwitch(pane,"searchbar/search.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }

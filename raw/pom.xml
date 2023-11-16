@@ -28,7 +28,7 @@
     <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-fxml</artifactId>
-        <version>16</version>
+        <version>${javafx.version}</version>
     </dependency>
     <dependency>
         <groupId>org.xerial</groupId>
