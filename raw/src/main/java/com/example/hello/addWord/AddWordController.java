@@ -42,6 +42,7 @@ public class AddWordController {
             System.out.println(
                     newWord.getWord() + newWord.getPronunciation() + newWord.getDescription() + newWord.getType());
             WordFile.writeWordsToFile(newWord);
+            clearAll();
             showAlert("Successfully", "word added", "assets/success.png");
         }
     }
@@ -57,6 +58,12 @@ public class AddWordController {
         alert.showAndWait();
     }
 
+    private void clearAll(){
+        description.clear();
+        word.clear();
+        ipa.clear();
+        type.setValue(null);
+    }
     @FXML
     void initialize() {
         type.getItems().addAll("n", "v", "adj", "adv", "pre", "other...");

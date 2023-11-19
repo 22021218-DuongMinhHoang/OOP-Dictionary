@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +21,8 @@ public class HelloApplication extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
-
+        Image icon = new Image(getClass().getResource("resources\\logovnu.png").toExternalForm());
+        stage.getIcons().add(icon);
         stage.setTitle("HELLO DICTIONARY");
         stage.setScene(scene);
         stage.sizeToScene();
