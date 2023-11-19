@@ -60,14 +60,14 @@ public class hellocontroller {
         }
     }
 
-    // @FXML
-    // void add(ActionEvent event) {
-    // try {
-    // new SceneSwitch(pane, "fxml/addword-view.fxml");
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // }
-    // }
+    @FXML
+    void add(ActionEvent event) {
+    try {
+    new SceneSwitch(pane, "addWord/add_word.fxml");
+    } catch (IOException e) {
+    e.printStackTrace();
+    }
+    }
 
     // @FXML
     // void game(ActionEvent event) {

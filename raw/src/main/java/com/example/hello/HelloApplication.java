@@ -14,13 +14,12 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
-                "helloapp\\hello-view.fxml"));
-        // FXMLLoader fxmlLoader = new
-        // FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
+        // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+        //         "helloapp/hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addWord/add_word.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
 
         stage.setTitle("HELLO DICTIONARY");
         stage.setScene(scene);
