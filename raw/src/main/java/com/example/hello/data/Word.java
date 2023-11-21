@@ -8,23 +8,25 @@ public class Word {
   private String html;
   private String pronounce;
   private String type;
+
   public Word(String word, String html, String pronounce) {
     this.word = word;
-    //this.description = description;
+    // this.description = description;
     this.html = html;
     this.pronounce = pronounce;
   }
 
-  public Word (String word, String pronounce, String description, String type){
+  public Word(String word, String pronounce, String description, String type) {
     this.word = word;
     this.pronounce = pronounce;
     this.description = description;
     this.type = type;
   }
 
-  public Word(){
-    
+  public Word() {
+
   }
+
   public String getFullDescription() {
     String s = html;
     // String s = html;
@@ -59,28 +61,35 @@ public class Word {
     return this.word;
   }
 
-  public String getPronunciation(){
+  public String getPronunciation() {
     return this.pronounce;
   }
-  public String getType(){
+
+  public String getType() {
 
     return this.type;
   }
-  public String getDescription(){
+
+  public String getDescription() {
     return this.description;
   }
-  public void setDescription(String description){
+
+  public void setDescription(String description) {
     this.description = description;
   }
-  public void setWord(String word){
+
+  public void setWord(String word) {
     this.word = word;
   }
-  public void setPronunciation(String pronounce){
+
+  public void setPronunciation(String pronounce) {
     this.pronounce = pronounce;
   }
-  public void setType(String type){
+
+  public void setType(String type) {
     this.type = type;
   }
+
   public static void main(String[] args) {
 
   }

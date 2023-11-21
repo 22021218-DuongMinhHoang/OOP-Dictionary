@@ -6,13 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "HelloApplication",
-            "request": "launch",
-            "mainClass": "com.example.hello.HelloApplication",
-            "projectName": "javafx"
-        },
-        {
-            "type": "java",
             "name": "Connect",
             "request": "launch",
             "mainClass": "com.example.hello.SearchBar.Connect",
