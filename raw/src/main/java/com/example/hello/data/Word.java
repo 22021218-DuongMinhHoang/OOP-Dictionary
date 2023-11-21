@@ -1,5 +1,7 @@
 package com.example.hello.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Word {
@@ -39,6 +41,31 @@ public class Word {
       }
     }
     return s;
+  }
+
+  public List<String> getDescriptionList() {
+    List<String> desList = new ArrayList<>();
+    String s = html;
+    s = s.replace("<h1>", "BREAK");
+    s = s.replace("</h1>", "BREAK");
+    s = s.replace("<h3>", "BREAK");
+    s = s.replace("</h3>", "BREAK");
+    s = s.replace("<h2>", "BREAK");
+    s = s.replace("</h2>", "BREAK");
+    s = s.replace("<ul>", "BREAK");
+    s = s.replace("</ul>", "BREAK");
+    s = s.replace("<ul style=\"list-style-type:circle\">", "BREAK");
+    s = s.replace("<li>", "BREAK");
+    s = s.replace("</li>", "BREAK");
+    s = s.replace("<i>", "BREAK");
+    s = s.replace("</i>", "BREAK");
+    String[] s1 = s.split("BREAK");
+    for (int i = 0; i < s1.length; i++) {
+      if (!s1[i].equals("")) {
+        desList.add(s1[i]);
+      }
+    }
+    return desList;
   }
 
   public String toString() {

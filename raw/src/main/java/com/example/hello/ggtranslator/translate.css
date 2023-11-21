@@ -1,0 +1,19 @@
+.text-area {
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 5;
+    -fx-text-fill: brown;
+}
+
+.button-sound {
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-background-image: url(resources/icons/speaker.png);
+    -fx-background-size: cover;
+}
+
+.label-language {
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 2;
+    -fx-text-fill: brown;
+}

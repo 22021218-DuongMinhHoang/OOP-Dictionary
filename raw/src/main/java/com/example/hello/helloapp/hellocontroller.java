@@ -3,11 +3,15 @@ package com.example.hello.helloapp;
 //raw\src\main\resources\com\example\hello\controller\resources\com\example\hello\controller
 
 import com.example.hello.management.SceneSwitch;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -18,13 +22,26 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class hellocontroller {
+    private int oldTabIndex = 1;
+    @FXML
+    private Tab tabsearch;
+
+    @FXML
+    private Tab tabhome;
+
+    @FXML
+    private Tab tabtranslate;
+
+    @FXML
+    private TabPane mainPane;
+
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
     @FXML
-    private Pane pane;
+    private Pane translate;
     @FXML
     private AnchorPane anchorPane;
 
@@ -52,12 +69,7 @@ public class hellocontroller {
 
     @FXML
     void Search(ActionEvent event) {
-        try {
-            new SceneSwitch(pane,
-                    "searchbar/search.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     // @FXML
@@ -84,21 +96,12 @@ public class hellocontroller {
 
     @FXML
     void startprogram(MouseEvent event) {
-        try {
-            new SceneSwitch(pane, "searchbar/search.fxml");
-            System.out.println("changed");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @FXML
     void translateText(ActionEvent event) {
-        try {
-            new SceneSwitch(pane, "ggtranslator/SentencesTranslating.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @FXML
@@ -108,18 +111,38 @@ public class hellocontroller {
         assert anchorPane != null : "fx:id=\"anchorPane\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert game != null : "fx:id=\"game\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert moreButton != null : "fx:id=\"moreButton\" was not injected: check your FXML file 'hello-view.fxml'.";
-        assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'hello-view.fxml'.";
+        // assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file
+        // 'hello-view.fxml'.";
         assert remove != null : "fx:id=\"remove\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
 
-        try {
-            new SceneSwitch(search, "searchbar/search.fxml");
-            // p.setScaleShape(true);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        mainPane.getSelectionModel().select(1);
+
+        // SceneSwitch.loadFXML(tabsearch, "searchbar/search.fxml");
+        tabsearch.setOnSelectionChanged(event -> {
+            if (tabsearch.isSelected()) {
+                SceneSwitch.changeTab(tabsearch, "searchbar/search.fxml",
+                        oldTabIndex, 0);
+                oldTabIndex = 0;
+            }
+        });
+
+        tabtranslate.setOnSelectionChanged(event -> {
+            if (tabtranslate.isSelected()) {
+                SceneSwitch.changeTab(tabtranslate, "ggtranslator/SentencesTranslating.fxml",
+                        oldTabIndex, 2);
+                oldTabIndex = 2;
+            }
+        });
+
+        tabhome.setOnSelectionChanged(event -> {
+            if (tabhome.isSelected()) {
+                SceneSwitch.changeTab(tabhome, "ggtranslator/SentencesTranslating.fxml",
+                        oldTabIndex, 1);
+                oldTabIndex = 1;
+            }
+        });
 
     }
 }

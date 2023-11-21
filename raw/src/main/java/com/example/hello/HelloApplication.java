@@ -20,11 +20,16 @@ public class HelloApplication extends Application {
         // FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
+        String tab = getClass().getResource("helloapp\\tab.css").toExternalForm();
+        String search = getClass().getResource("searchbar\\search.css").toExternalForm();
+        String translate = getClass().getResource("ggtranslator\\translate.css").toExternalForm();
+
+        scene.getStylesheets().addAll(tab, search, translate);
 
         stage.setTitle("HELLO DICTIONARY");
         stage.setScene(scene);
         stage.sizeToScene();
+        // stage.setResizable(false);
         stage.show();
     }
 

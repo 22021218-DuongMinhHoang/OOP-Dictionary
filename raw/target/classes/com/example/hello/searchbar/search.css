@@ -1,0 +1,35 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell { /* <=== changed to even */
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-text-fill: brown;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: rgb(255, 220, 100);
+}
+
+.field {
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 5;
+    -fx-text-fill: brown;
+}
+
+.label {
+    -fx-text-fill: brown;
+}
+
+.button {
+    -fx-background-color: rgb(255, 255, 146);
+    -fx-background-image: url(resources/icons/speaker.png);
+    -fx-background-size: cover;
+}
+
+.button:hover {
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 2;
+}

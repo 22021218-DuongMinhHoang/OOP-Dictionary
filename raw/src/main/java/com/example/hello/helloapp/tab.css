@@ -1,6 +1,6 @@
-* {
-	-fx-primary-color: #007acc;
-	-fx-secondary-color: #4B6EAF;
+/* * {
+	-fx-primary-color: rgb(255, 178, 55);
+	-fx-secondary-color: rgb(255, 243, 146);
 
 	-fx-focus-color: -fx-secondary-color;
 }
@@ -40,14 +40,69 @@
  	-fx-border-width: 0;
 	-fx-border-insets: 0 0 0 0;
 	-fx-border-radius: 0;
-} 
+} */
 
-/* .tab-pane .tab:hover {
-	-fx-background-color: #4B6EAF;
-	-fx-pref-height: 40;
+.tab-pane {
+	-fx-background-image: url(resources/icons/background.jpg);
+	-fx-background-size: cover;
+}
+
+.tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
+ 	-fx-border-width: 0;
+	-fx-border-insets: 0 0 0 0;
+	-fx-border-radius: 0;
+}
+
+.tab-pane .tab-header-area {
+	-fx-padding: 0 305 0 305;
+}
+
+.tab-header-area .tab-header-background {
+	-fx-background-color: rgb(255, 243, 146);
 }
 
 .tab {
-	-fx-background-image: url(resources/buttonFrame.png), url(resources/icons/Google.png);
+	-fx-background-color: rgb(255, 243, 146);
+	-fx-background-image: url(resources/icons/Google.png);
 	-fx-background-size: cover;
-}*/
+	-fx-rotate: 180;
+}
+
+#tabsearch {
+	-fx-background-image: url(resources/icons/Google.png);
+	-fx-background-size: cover;
+}
+
+#tabsearch:hover {
+	-fx-background-image: url(resources/icons/Google_hover.png);
+}
+
+#tabsearch:selected {
+	-fx-background-image: url(resources/icons/Google_hover.png);
+}
+
+#tabhome {
+	-fx-background-image: url(resources/icons/Home.png);
+	-fx-background-size: cover;
+}
+
+#tabhome:hover {
+	-fx-background-image: url(resources/icons/Home_hover.png);
+} 
+
+#tabhome:selected {
+	-fx-background-image: url(resources/icons/Home_hover.png);
+}
+
+#tabtranslate {
+	-fx-background-image: url(resources/icons/Translate.png);
+	-fx-background-size: cover;
+}
+
+#tabtranslate:hover {
+	-fx-background-image: url(resources/icons/Translate_hover.png);
+} 
+
+#tabtranslate:selected {
+	-fx-background-image: url(resources/icons/Translate_hover.png);
+}
