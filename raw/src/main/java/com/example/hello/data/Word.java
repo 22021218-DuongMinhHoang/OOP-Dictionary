@@ -20,7 +20,9 @@ public class Word {
     this.html = html;
     this.pronounce = pronounce;
   }
-
+  public Word(){
+    
+  }
   public Word(String word, String pronounce, String description, int type) {
     this.word = word;
     this.pronounce = pronounce;
@@ -54,9 +56,6 @@ public class Word {
     return type;
   }
 
-  public Word() {
-
-  }
 
   public String getFullDescription() {
     String s = html;
