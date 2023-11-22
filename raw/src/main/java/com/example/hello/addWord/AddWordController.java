@@ -77,7 +77,7 @@ public class AddWordController {
         ImageIcon icon = new ImageIcon("resources\\logovnu.png");
         int choice = JOptionPane.showOptionDialog(
                 null,
-                "Từ '" + word + "' đã tồn tại trong từ điển. Bạn có muốn chỉnh sửa nó không?",
+                "Từ '" + word + "' đã tồn tại trong từ điển. Bạn có muốn định nghĩa lại nó không?",
                 "Từ đã tồn tại",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
