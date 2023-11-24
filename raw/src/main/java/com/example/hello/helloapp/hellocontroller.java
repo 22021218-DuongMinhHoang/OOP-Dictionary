@@ -33,6 +33,9 @@ public class hellocontroller {
     private Tab tabtranslate;
 
     @FXML
+    private Tab tabgame;
+
+    @FXML
     private TabPane mainPane;
 
     @FXML
@@ -141,6 +144,14 @@ public class hellocontroller {
                 SceneSwitch.changeTab(tabhome, "ggtranslator/SentencesTranslating.fxml",
                         oldTabIndex, 1);
                 oldTabIndex = 1;
+            }
+        });
+
+        tabgame.setOnSelectionChanged(event -> {
+            if (tabgame.isSelected()) {
+                SceneSwitch.changeTab(tabgame, "ggtranslator/SentencesTranslating.fxml",
+                        oldTabIndex, 3);
+                oldTabIndex = 3;
             }
         });
 

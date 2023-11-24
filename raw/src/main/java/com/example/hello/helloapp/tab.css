@@ -106,3 +106,16 @@
 #tabtranslate:selected {
 	-fx-background-image: url(resources/icons/Translate_hover.png);
 }
+
+#tabgame {
+	-fx-background-image: url(resources/icons/Game.png);
+	-fx-background-size: cover;
+}
+
+#tabgame:hover {
+	-fx-background-image: url(resources/icons/Game_hover.png);
+} 
+
+#tabgame:selected {
+	-fx-background-image: url(resources/icons/Game_hover.png);
+}
