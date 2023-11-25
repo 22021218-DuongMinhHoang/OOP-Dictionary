@@ -51,25 +51,31 @@ public class AddWordController {
         }
         return 0;
     }
+
     @FXML
     void wordAction(ActionEvent event) {
-        String des = description.getText();
-        String w = word.getText();
+        String des = description.getText().toLowerCase();
+        String w = word.getText().toLowerCase();
         int t = getIntType(type.getValue());
-        String pro = ipa.getText();
-        if (des == null || w == null || t == 0 || pro == null|| validateInput(pro)) {
+        String pro = ipa.getText().toLowerCase();
+        if (des == null || w == null || t == 0 || pro == null || validateInput(pro)) {
             showAlert("Không hợp lệ!", "Xin hãy điền đủ các dòng và đúng cú pháp", "assets/alert.png");
         } else {
             Word newWord = new Word(w, pro, des, t);
-            if(Connect.doesWordExist(newWord.getWord())){
-                if(showNoticePane(w)){
-                    //ở đây sẽ add cái pane mật mã để edit được từ ấy ý
-                    Connect.insertWord(newWord);
+            if (Connect.doesWordExist(newWord.getWord())) {
+                if (showNoticePane(w)) {
+                    // ở đây sẽ add cái pane mật mã để edit được từ ấy ý
+                    Connect.updateWord(newWord);
+                    showAlert("Thành công", "Từ '" + newWord.getWord() + "' đã được chỉnh sửa thành công",
+                            "assets/success.png");
                     System.out.println("ok");
                 }
+            } else {
+                Connect.insertWord(newWord);
+                showAlert("Thành công", "Từ mới đã được thêm vào từ điển", "assets/success.png");
             }
             clearAll();
-            showAlert("Thành công", "Từ mới đã được thêm vào từ điển", "assets/success.png");
+
         }
     }
 
@@ -82,7 +88,7 @@ public class AddWordController {
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 icon,
-                new Object[]{"Có", "Không"},
+                new Object[] { "Có", "Không" },
                 "Không");
 
         // Return true if the user chose "Yes", false otherwise
@@ -100,16 +106,18 @@ public class AddWordController {
         alert.showAndWait();
     }
 
-    private void clearAll(){
+    private void clearAll() {
         description.clear();
         word.clear();
         ipa.clear();
         type.setValue(null);
     }
+
     private boolean validateInput(String input) {
         String regex = "^/.*?/$";
         return !Pattern.matches(regex, input);
     }
+
     @FXML
     void initialize() {
         type.getItems().addAll("n", "v", "adj", "adv", "pre", "other...");

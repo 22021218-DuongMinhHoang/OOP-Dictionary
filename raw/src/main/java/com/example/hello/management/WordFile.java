@@ -11,20 +11,21 @@ import java.util.List;
 import com.example.hello.data.Word;
 
 public class WordFile {
-    private static final String filePath = "src/main/java/com/example/hello/addWord/wordAdded.txt";
-    private static final List<Word> words = new ArrayList<>();
+    private static final String filePath = "src/main/java/com/example/hello/deleteWord/deletedWords.txt";
+    private static final List<String> deleted_words = new ArrayList<>();
 
-    public static void writeWordsToFile(Word word) {
-        words.add(word);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            String line = wordToLine(word);
-            writer.write(line);
+    public static void writeWordsToFile(String word) {
+        deleted_words.add(word);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,true))) {
+            writer.write(word);
             writer.newLine();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+   
 
     private static String wordToLine(Word word) {
         // Assuming Word has getters for word, pronunciation, description, and type
@@ -59,6 +60,9 @@ public class WordFile {
         return word;
     }
 
+    public static List<String> getWordsFile(){
+        return deleted_words;
+    }
     public static void emptyFile() throws IOException {
         // Use FileWriter to write an empty string to the file
         try (FileWriter fileWriter = new FileWriter(filePath, false)) {
