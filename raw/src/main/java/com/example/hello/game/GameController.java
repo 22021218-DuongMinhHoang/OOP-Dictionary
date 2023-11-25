@@ -79,6 +79,9 @@ public class GameController implements Initializable {
   @FXML
   private Text sweetgemStorage;
 
+  @FXML
+  private Pane shopPane;
+
   Slot slot1;
 
   public void start(CropType type, Slot slot) {
@@ -146,7 +149,7 @@ public class GameController implements Initializable {
     levelPane.setVisible(false);
 
     slot1 = new Slot();
-    plantArea.getChildren().add(slot1.getActions());
+    plantArea.add(slot1.getActions(), 0, 0);
     slot1.getHarvestItem().setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
@@ -167,6 +170,9 @@ public class GameController implements Initializable {
 
     starfruitNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.STARFRUIT).asString());
     starfruitStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.STARFRUIT).asString());
+
+    sweetgemNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.SWEETGEMBERRY).asString());
+    sweetgemStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.SWEETGEMBERRY).asString());
   }
 
 }

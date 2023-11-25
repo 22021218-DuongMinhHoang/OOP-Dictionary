@@ -81,4 +81,8 @@ public class Inventory {
   public int getCropNumber(CropType type) {
     return seeds.get(type).get();
   }
+
+  public int getCropStorageNumber(CropType type) {
+    return storage.get(type).get();
+  }
 }
