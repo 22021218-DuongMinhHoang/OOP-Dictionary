@@ -17,7 +17,8 @@ public class HelloApplication extends Application {
         // myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("helloapp/hello-view.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addWord/add_word.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deleteWord/delete_word.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deleteWord/delete_word.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("editWord/edit_word.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());
