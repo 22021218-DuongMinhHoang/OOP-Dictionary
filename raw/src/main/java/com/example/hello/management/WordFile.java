@@ -27,11 +27,11 @@ public class WordFile {
 
    
 
-    private static String wordToLine(Word word) {
-        // Assuming Word has getters for word, pronunciation, description, and type
-        return String.format("%s;%s;%s;%s", word.getWord(), word.getPronunciation(),
-                word.getDescription(), word.getType());
-    }
+    // private static String wordToLine(Word word) {
+    //     // Assuming Word has getters for word, pronunciation, description, and type
+    //     return String.format("%s;%s;%s;%s", word.getWord(), word.getPronunciation(),
+    //             word.getDescription(), word.getType());
+    // }
 
     public static List<Word> readWordsFromFile() {
         List<Word> wordList = new ArrayList<>();

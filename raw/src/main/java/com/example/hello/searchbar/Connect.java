@@ -296,13 +296,13 @@ public class Connect {
    */
   public static void main(String[] args) {
     // System.out.println(getHTML(1));
-    System.out.println(doesWordExist("abbreviation"));
-    String word = "pneumonoultramicroscopicsilicovolcanoconiosis";
-    String pronounce = "ˌnjuːmənoʊˌʌltrəˌmaɪkroʊˌskɒpɪksɪlɪkoʊˌvɒlkeɪnoʊkoʊˌniːoʊsɪs\n";
-    String description = "It is a technical word and refers to a lung disease caused by\n"
-        + "the inhalation of very fine silica particles, specifically from a volcano; medically,\n"
-        + "it is considered a coined term";
-    int type = Word.N;
+    // System.out.println(doesWordExist("abbreviation"));
+    // String word = "pneumonoultramicroscopicsilicovolcanoconiosis";
+    // String pronounce = "ˌnjuːmənoʊˌʌltrəˌmaɪkroʊˌskɒpɪksɪlɪkoʊˌvɒlkeɪnoʊkoʊˌniːoʊsɪs\n";
+    // String description = "It is a technical word and refers to a lung disease caused by\n"
+    //     + "the inhalation of very fine silica particles, specifically from a volcano; medically,\n"
+    //     + "it is considered a coined term";
+    // int type = Word.N;
     // insertWord(new Word(word, pronounce, description, type));
     // deleteWord(word);
     restoreWordToDb("Trieu Minh Nhat");
