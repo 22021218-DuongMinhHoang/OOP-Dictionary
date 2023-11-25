@@ -307,7 +307,7 @@ public class Connect {
     // insertWord(new Word(word, pronounce, description, type));
     // deleteWord(word);
     restoreWordToDb("Trieu Minh Nhat");
-    restoreAllWordsToDb();
+    restoreAllWordsToDb();  
   }
 }
 
