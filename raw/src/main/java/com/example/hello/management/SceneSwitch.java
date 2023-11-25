@@ -19,10 +19,17 @@ public class SceneSwitch {
     public SceneSwitch(Pane currentPane, String fxml) throws IOException {
         Pane pane = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource(fxml)));
         // currentPane.getChildren().removeAll();
-        currentPane.getChildren().add(pane);
         // pane.setPrefSize(currentPane.getWidth(), currentPane.getHeight());
+        currentPane.getChildren().removeAll();
+        currentPane.getChildren().add(pane);
         pane.setPrefSize(currentPane.getPrefWidth(), currentPane.getPrefHeight());
+    }
 
+    public static void changeScene(Pane currentPane, String fxml) throws IOException {
+        Pane pane = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource(fxml)));
+        currentPane.getChildren().removeAll();
+        currentPane.getChildren().add(pane);
+        pane.setPrefSize(currentPane.getWidth(), currentPane.getHeight());
     }
 
     public static void changeTab(Tab tab, String fxml, int oldTabIndex, int newTabIndex) {

@@ -72,6 +72,10 @@ public class Word {
     return word + "    " + description;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
   public String getWord() {
     return this.word;
   }

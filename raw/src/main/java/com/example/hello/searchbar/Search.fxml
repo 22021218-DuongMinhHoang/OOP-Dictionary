@@ -36,8 +36,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#usSound" prefHeight="38.0" prefWidth="36.0" />
-                        <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#ukSound" prefHeight="60.0" prefWidth="123.0" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#usSound" prefHeight="38.0" prefWidth="36.0" styleClass="button_speak" />
+                        <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#ukSound" prefHeight="60.0" prefWidth="123.0" styleClass="button_speak" GridPane.rowIndex="1" />
                         <Label text="US" textFill="#e8850d" GridPane.columnIndex="1" />
                         <Label layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>

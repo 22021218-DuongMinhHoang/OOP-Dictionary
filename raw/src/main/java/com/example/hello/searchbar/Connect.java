@@ -86,6 +86,21 @@ public class Connect {
     return fw;
   }
 
+  public static Word getRandomWord() {
+    String sql = "SELECT word, html, description, pronounce FROM av ORDER BY RANDOM() LIMIT 1";
+    Word w = null;
+    try (Connection conn = connect();
+        Statement stm = conn.createStatement();
+        ResultSet rss = stm.executeQuery(sql)) {
+      w = new Word(rss.getString("word"), rss.getString("html"),
+          rss.getString("description"), rss.getString("pronounce"));
+      System.out.println(w.getWord());
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+    return w;
+  }
+
   public static String getHTML(int id) {
     String sql = "SELECT html FROM av WHERE id = " + id;
     try (Connection conn = connect();
@@ -103,6 +118,6 @@ public class Connect {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    System.out.println(getHTML(1));
+    getRandomWord();
   }
 }

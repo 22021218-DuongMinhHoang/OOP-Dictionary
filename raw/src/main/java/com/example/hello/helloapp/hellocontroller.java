@@ -149,7 +149,7 @@ public class hellocontroller {
 
         tabgame.setOnSelectionChanged(event -> {
             if (tabgame.isSelected()) {
-                SceneSwitch.changeTab(tabgame, "ggtranslator/SentencesTranslating.fxml",
+                SceneSwitch.changeTab(tabgame, "game/mainGame.fxml",
                         oldTabIndex, 3);
                 oldTabIndex = 3;
             }
