@@ -1,6 +1,5 @@
 package com.example.hello;
 
-//import com.example.hello.data.Dictionary;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,10 +14,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("helloapp/hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("helloapp/hello-view.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addWord/add_word.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deleteWord/delete_word.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("editWord/edit_word.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("editWord/edit_word.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("helloapp\\tab.css").toExternalForm());

@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 import com.example.hello.data.Word;
 import com.example.hello.management.WordFile;
@@ -82,7 +81,7 @@ public class Connect {
             fw.add(w);
           }
           if (fw.size() < 10) {
-            sql = "SELECT word, html, description, pronounce FROM av WHERE word LIKE '%" + word + "%' LIMIT "
+            sql = "SELECT word, html, description, pronounce FROM av WHERE word LIKE '%" + word + "%' AND isDelete = 0 LIMIT "
                 + (10 - fw.size());
             try (Connection conn2 = connect();
                 Statement stm2 = conn2.createStatement();
