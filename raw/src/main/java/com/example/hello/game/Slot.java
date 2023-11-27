@@ -16,10 +16,11 @@ public class Slot {
 
   private MenuItem water;
   private MenuItem harvest;
+  private MenuItem destroy;
 
   private CustomMenuItem plantBag;
   private SplitMenuButton plant;
-  private MenuItem parnip;
+  private MenuItem parsnip;
   private MenuItem melon;
   private MenuItem pumpkin;
   private MenuItem starfruit;
@@ -57,12 +58,27 @@ public class Slot {
       }
     });
     actions.getItems().add(water);
+
+    /** Destroy. */
+    destroy = new MenuItem("Destroy");
+    destroy.setVisible(false);
+    destroy.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        if (crop != null) {
+          crop = null;
+          water.setVisible(false);
+          harvest.setVisible(false);
+          destroy.setVisible(false);
+          plantBag.setVisible(true);
+        }
+      }
+    });
+    actions.getItems().add(destroy);
   }
 
   private MenuItem newPlantItem(MenuItem pitem, CropType type) {
-    String str = "%d";
-    str = String.format(str, Inventory.getInstance().getCropNumber(type));
-    pitem = new MenuItem(CropsInfo.getCropName(type) + " " + str);
+    pitem = new MenuItem(CropsInfo.getCropName(type));
     pitem.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
@@ -97,6 +113,9 @@ public class Slot {
         harvest.setVisible(true);
       } else if (crop.getStatue() == 0) {
         water.setVisible(!crop.isWatered());
+      } else {
+        water.setVisible(false);
+        destroy.setVisible(true);
       }
     }
   }
@@ -106,8 +125,8 @@ public class Slot {
       plant.getItems().clear();
     }
 
-    /** Parnip. */
-    parnip = newPlantItem(parnip, CropType.PARNIP);
+    /** Parsnip. */
+    parsnip = newPlantItem(parsnip, CropType.PARSNIP);
 
     /** Melon. */
     melon = newPlantItem(melon, CropType.MELON);

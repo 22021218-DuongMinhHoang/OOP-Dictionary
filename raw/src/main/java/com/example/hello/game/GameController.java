@@ -38,10 +38,10 @@ public class GameController implements Initializable {
   private Label money;
 
   @FXML
-  private Text parnipNumber;
+  private Text parsnipNumber;
 
   @FXML
-  private Text parnipStorage;
+  private Text parsnipStorage;
 
   @FXML
   private Text melonNumber;
@@ -76,6 +76,9 @@ public class GameController implements Initializable {
   @FXML
   private Text levelNumber;
 
+  @FXML
+  private Text rightAnswerNumber;
+
   Slot slot1;
 
   public void start(CropType type, Slot slot) {
@@ -88,7 +91,7 @@ public class GameController implements Initializable {
   private void playing(CropType type, Slot slot, int lv, int rightNums) {
     if (lv <= CropsInfo.getCropTime(type)) {
       levelNumber.setText(String.format("%d / %d", lv + 1, CropsInfo.getCropTime(type) + 1));
-      ;
+      rightAnswerNumber.setText(String.format("%d", rightNums));
       if (!levelOptions.getChildren().isEmpty()) {
         levelOptions.getChildren().clear();
       }
@@ -181,8 +184,8 @@ public class GameController implements Initializable {
 
     money.textProperty().bind(Inventory.getInstance().getMoneyProperty().asString());
 
-    parnipNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.PARNIP).asString());
-    parnipStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.PARNIP).asString());
+    parsnipNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.PARSNIP).asString());
+    parsnipStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.PARSNIP).asString());
 
     melonNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.MELON).asString());
     melonStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.MELON).asString());

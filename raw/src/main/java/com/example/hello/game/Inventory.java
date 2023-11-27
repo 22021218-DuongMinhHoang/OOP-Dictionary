@@ -15,12 +15,12 @@ public class Inventory {
   private Inventory() {
     seeds = new Hashtable<>();
     storage = new Hashtable<>();
-    seeds.put(CropType.PARNIP, new SimpleIntegerProperty(5));
+    seeds.put(CropType.PARSNIP, new SimpleIntegerProperty(5));
     seeds.put(CropType.MELON, new SimpleIntegerProperty(0));
     seeds.put(CropType.PUMPKIN, new SimpleIntegerProperty(0));
     seeds.put(CropType.STARFRUIT, new SimpleIntegerProperty(0));
     seeds.put(CropType.SWEETGEMBERRY, new SimpleIntegerProperty(0));
-    storage.put(CropType.PARNIP, new SimpleIntegerProperty(0));
+    storage.put(CropType.PARSNIP, new SimpleIntegerProperty(0));
     storage.put(CropType.MELON, new SimpleIntegerProperty(0));
     storage.put(CropType.PUMPKIN, new SimpleIntegerProperty(0));
     storage.put(CropType.STARFRUIT, new SimpleIntegerProperty(0));

@@ -25,13 +25,13 @@ public class Shop {
     shop = new GridPane();
 
     bill = new Hashtable<>();
-    bill.put(CropType.PARNIP, new SimpleIntegerProperty(0));
+    bill.put(CropType.PARSNIP, new SimpleIntegerProperty(0));
     bill.put(CropType.MELON, new SimpleIntegerProperty(0));
     bill.put(CropType.PUMPKIN, new SimpleIntegerProperty(0));
     bill.put(CropType.STARFRUIT, new SimpleIntegerProperty(0));
     bill.put(CropType.SWEETGEMBERRY, new SimpleIntegerProperty(0));
 
-    addShopOptions(CropType.PARNIP, 0);
+    addShopOptions(CropType.PARSNIP, 0);
     addShopOptions(CropType.MELON, 1);
     addShopOptions(CropType.PUMPKIN, 2);
     addShopOptions(CropType.STARFRUIT, 3);
@@ -39,7 +39,7 @@ public class Shop {
 
     Text sumText = new Text();
     IntegerProperty sum = new SimpleIntegerProperty();
-    sum.bind(bill.get(CropType.PARNIP).add(bill.get(CropType.MELON)).add(bill.get(CropType.PUMPKIN))
+    sum.bind(bill.get(CropType.PARSNIP).add(bill.get(CropType.MELON)).add(bill.get(CropType.PUMPKIN))
         .add(bill.get(CropType.STARFRUIT)).add(bill.get(CropType.SWEETGEMBERRY)));
     sumText.textProperty().bind(sum.asString());
 
@@ -51,7 +51,7 @@ public class Shop {
 
       @Override
       public void handle(ActionEvent event) {
-        doTransaction(CropType.PARNIP);
+        doTransaction(CropType.PARSNIP);
         doTransaction(CropType.MELON);
         doTransaction(CropType.PUMPKIN);
         doTransaction(CropType.STARFRUIT);

@@ -1,7 +1,7 @@
 package com.example.hello.game;
 
 enum CropType {
-  PARNIP,
+  PARSNIP,
   MELON,
   PUMPKIN,
   STARFRUIT,
@@ -11,8 +11,8 @@ enum CropType {
 public class CropsInfo {
   public static String getCropName(CropType type) {
     String name = "";
-    if (type == CropType.PARNIP) {
-      name = "Parnip";
+    if (type == CropType.PARSNIP) {
+      name = "Parsnip";
     } else if (type == CropType.MELON) {
       name = "Melon";
     } else if (type == CropType.PUMPKIN) {
@@ -26,7 +26,7 @@ public class CropsInfo {
   }
 
   public static int getCropTime(CropType type) {
-    if (type == CropType.PARNIP) {
+    if (type == CropType.PARSNIP) {
       return 2;
     } else if (type == CropType.MELON) {
       return 4;
@@ -40,7 +40,7 @@ public class CropsInfo {
   }
 
   public static int getCropBuyPrice(CropType type) {
-    if (type == CropType.PARNIP) {
+    if (type == CropType.PARSNIP) {
       return 0;
     } else if (type == CropType.MELON) {
       return 80;
@@ -54,7 +54,7 @@ public class CropsInfo {
   }
 
   public static int getCropSellPrice(CropType type) {
-    if (type == CropType.PARNIP) {
+    if (type == CropType.PARSNIP) {
       return 35;
     } else if (type == CropType.MELON) {
       return 250;
