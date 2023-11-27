@@ -86,6 +86,113 @@ public class Connect {
     return fw;
   }
 
+<<<<<<< Updated upstream
+=======
+  public static Word getRandomWord() {
+    String sql = "SELECT word, html, description, pronounce FROM av ORDER BY RANDOM() LIMIT 1";
+    Word w = null;
+    try (Connection conn = connect();
+        Statement stm = conn.createStatement();
+        ResultSet rss = stm.executeQuery(sql)) {
+      w = new Word(rss.getString("word"), rss.getString("html"),
+          rss.getString("description"), rss.getString("pronounce"));
+      System.out.println(w.getWord());
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+    return w;
+  }
+  
+  public static Word getWord(String word) {
+    Word w = null;
+    boolean isDelete = false;
+    try {
+      if (checkCommand("av")) {
+        String sql = "SELECT word, html, description, pronounce, isDelete FROM av WHERE word = '" + word.toLowerCase()
+            + "'";
+        try (Connection conn = connect();
+            Statement stm = conn.createStatement();
+            ResultSet rss = stm.executeQuery(sql)) {
+          while (rss.next()) {
+            w = new Word(rss.getString("word"), rss.getString("html"),
+                rss.getString("description"), rss.getString("pronounce"));
+            isDelete = rss.getBoolean("isDelete");
+          }
+        } catch (SQLException e) {
+          System.out.println(e.getMessage());
+        }
+      }
+    } catch (WrongCommandException e) {
+      System.out.println(e.getMessage());
+    }
+    if (isDelete)
+      return null;
+    return w;
+  }
+
+  public static void insertWord(Word newWord) {
+    // if (!doesWordExist(newWord.getWord())) {
+    try {
+      if (checkCommand("av")) {
+        int id = getMaxIdFromTable() + 1;
+        String sql = "INSERT INTO av (id, word, html, description, pronounce,isDelete) VALUES (?, ?, ?, ?, ?,0)";
+
+        try (Connection conn = connect();
+            PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+          preparedStatement.setInt(1, id);
+          preparedStatement.setString(2, newWord.getWord());
+          preparedStatement.setString(3, newWord.getHtml());
+          preparedStatement.setString(4, newWord.getDescription());
+          preparedStatement.setString(5, newWord.getPronunciation());
+          preparedStatement.executeUpdate();
+          System.out.println("sucessfully added to db");
+        } catch (SQLException e) {
+          System.out.println("Error executing SQL: " + e.getMessage());
+        }
+      }
+    } catch (WrongCommandException e) {
+      System.out.println("Wrong command: " + e.getMessage());
+    }
+    // } else {
+    // System.out.println("Word already exists");
+    // }
+  }
+
+  public static void updateWord(Word updatedWord) {
+    try {
+      if (checkCommand("av")) {
+        String sql = "UPDATE av SET html = ?, description = ?, pronounce = ?, isDelete = 0 WHERE word = ?";
+
+        try (Connection conn = connect();
+            PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+
+          preparedStatement.setString(1, updatedWord.getHtml());
+          preparedStatement.setString(2, updatedWord.getDescription());
+          preparedStatement.setString(3, updatedWord.getPronunciation());
+          preparedStatement.setString(4, updatedWord.getWord());
+
+          int rowsAffected = preparedStatement.executeUpdate();
+
+          if (rowsAffected > 0) {
+            System.out.println("Successfully updated in the database");
+          } else {
+            System.out.println("Word not found in the database");
+          }
+
+        } catch (SQLException e) {
+          System.out.println("Error executing SQL: " + e.getMessage());
+        }
+      }
+    } catch (WrongCommandException e) {
+      System.out.println("Wrong command: " + e.getMessage());
+    }
+  }
+
+  public static boolean doesWordExist(String word) {
+    return getWord(word) != null;
+  }
+
+>>>>>>> Stashed changes
   public static String getHTML(int id) {
     String sql = "SELECT html FROM av WHERE id = " + id;
     try (Connection conn = connect();
