@@ -59,7 +59,10 @@ public class Inventory {
 
   public void harvestCrop(CropType type) {
     storage.get(type).set(storage.get(type).get() + 1);
-    sellCrops(type, 1);
+  }
+
+  public void harvestCrop(CropType type, int number) {
+    storage.get(type).set(storage.get(type).get() + number);
   }
 
   public int getMoney() {

@@ -28,4 +28,8 @@ public class Level {
   public int getRightAnswer() {
     return rightAnswer;
   }
+
+  public String getRightAnswerWord() {
+    return options[rightAnswer].getWord();
+  }
 }

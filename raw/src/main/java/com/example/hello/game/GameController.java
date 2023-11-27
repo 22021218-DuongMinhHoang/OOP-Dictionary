@@ -29,18 +29,6 @@ public class GameController implements Initializable {
   private Text question;
 
   @FXML
-  private Button choice1;
-
-  @FXML
-  private Button choice2;
-
-  @FXML
-  private Button choice3;
-
-  @FXML
-  private Button choice4;
-
-  @FXML
   private Pane mainPane;
 
   @FXML
@@ -82,61 +70,94 @@ public class GameController implements Initializable {
   @FXML
   private Pane shopPane;
 
+  @FXML
+  private GridPane levelOptions;
+
+  @FXML
+  private Text levelNumber;
+
   Slot slot1;
 
   public void start(CropType type, Slot slot) {
+    int lv = 0;
+    int rightNums = 0;
     levelPane.setVisible(true);
-    Level level = new Level();
-    question.setText(level.getQuestion());
-    Word[] word = level.getOptions();
-    choice1.setText(word[0].getWord());
-    choice2.setText(word[1].getWord());
-    choice3.setText(word[2].getWord());
-    choice4.setText(word[3].getWord());
+    playing(type, slot, lv, rightNums);
+  }
 
-    choice1.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        if (0 == level.getRightAnswer()) {
-          levelPane.setVisible(false);
-          Inventory.getInstance().harvestCrop(type);
-          slot.harvestCrop();
-        }
+  private void playing(CropType type, Slot slot, int lv, int rightNums) {
+    if (lv <= CropsInfo.getCropTime(type)) {
+      levelNumber.setText(String.format("%d / %d", lv + 1, CropsInfo.getCropTime(type) + 1));
+      ;
+      if (!levelOptions.getChildren().isEmpty()) {
+        levelOptions.getChildren().clear();
       }
-    });
+      Level level = new Level();
+      question.setText(level.getQuestion());
+      Word[] word = level.getOptions();
+      Button[] choice = new Button[4];
+      for (int i = 0; i < 4; i++) {
+        choice[i] = new Button();
+        choice[i].setText(word[i].getWord());
+        switch (i) {
+          case 0:
+            choice[i].setOnAction(new EventHandler<ActionEvent>() {
+              @Override
+              public void handle(ActionEvent event) {
+                if (0 == level.getRightAnswer()) {
+                  playing(type, slot, lv + 1, rightNums + 1);
+                } else {
+                  playing(type, slot, lv + 1, rightNums);
+                }
+              }
+            });
+            break;
+          case 1:
+            choice[i].setOnAction(new EventHandler<ActionEvent>() {
+              @Override
+              public void handle(ActionEvent event) {
+                if (1 == level.getRightAnswer()) {
+                  playing(type, slot, lv + 1, rightNums + 1);
+                } else {
+                  playing(type, slot, lv + 1, rightNums);
+                }
+              }
+            });
+            break;
+          case 2:
+            choice[i].setOnAction(new EventHandler<ActionEvent>() {
+              @Override
+              public void handle(ActionEvent event) {
+                if (2 == level.getRightAnswer()) {
+                  playing(type, slot, lv + 1, rightNums + 1);
+                } else {
+                  playing(type, slot, lv + 1, rightNums);
+                }
+              }
+            });
+            break;
+          case 3:
+            choice[i].setOnAction(new EventHandler<ActionEvent>() {
+              @Override
+              public void handle(ActionEvent event) {
+                if (3 == level.getRightAnswer()) {
+                  playing(type, slot, lv + 1, rightNums + 1);
+                } else {
+                  playing(type, slot, lv + 1, rightNums);
+                }
+              }
+            });
+            break;
+        }
+        levelOptions.add(choice[i], i % 2, i / 2);
+      }
+    } else {
+      levelPane.setVisible(false);
+      double number = 3 * ((double) rightNums / (double) (CropsInfo.getCropTime(type) + 1));
+      Inventory.getInstance().harvestCrop(type, (int) number);
+      slot.harvestCrop();
+    }
 
-    choice2.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        if (1 == level.getRightAnswer()) {
-          levelPane.setVisible(false);
-          Inventory.getInstance().harvestCrop(type);
-          slot.harvestCrop();
-        }
-      }
-    });
-
-    choice3.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        if (2 == level.getRightAnswer()) {
-          levelPane.setVisible(false);
-          Inventory.getInstance().harvestCrop(type);
-          slot.harvestCrop();
-        }
-      }
-    });
-
-    choice4.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        if (3 == level.getRightAnswer()) {
-          levelPane.setVisible(false);
-          Inventory.getInstance().harvestCrop(type);
-          slot.harvestCrop();
-        }
-      }
-    });
   }
 
   public void nextDay() {
@@ -147,6 +168,7 @@ public class GameController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
     // TODO Auto-generated method stub
     levelPane.setVisible(false);
+    shopPane.setVisible(false);
 
     slot1 = new Slot();
     plantArea.add(slot1.getActions(), 0, 0);
@@ -175,4 +197,18 @@ public class GameController implements Initializable {
     sweetgemStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.SWEETGEMBERRY).asString());
   }
 
+  public void shopping() {
+    if (shopPane.getChildren().isEmpty()) {
+      shopPane.setVisible(true);
+      Shop shop = new Shop();
+      shopPane.getChildren().add(shop.getShop());
+      shop.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+          shopPane.setVisible(false);
+          shopPane.getChildren().clear();
+        }
+      });
+    }
+  }
 }
