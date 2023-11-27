@@ -9,6 +9,7 @@
     -fx-background-color: rgb(255, 255, 146);
     -fx-background-image: url(resources/icons/speaker.png);
     -fx-background-size: cover;
+
 }
 
 .label-language {
