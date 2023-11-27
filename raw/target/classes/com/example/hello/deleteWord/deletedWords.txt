@@ -1,0 +1,4 @@
+day
+hello
+nice
+no

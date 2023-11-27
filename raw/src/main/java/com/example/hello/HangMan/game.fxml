@@ -133,12 +133,12 @@
                </font></Label>
          </children>
       </GridPane>
-      <Button fx:id="button" layoutX="613.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#ok" text="OK">
+      <Button fx:id="button" layoutX="556.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ok" text="OK">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="501.0" layoutY="256.0" prefHeight="56.0" prefWidth="94.0">
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="449.0" layoutY="256.0" prefHeight="56.0" prefWidth="94.0">
          <font>
             <Font size="24.0" />
          </font>

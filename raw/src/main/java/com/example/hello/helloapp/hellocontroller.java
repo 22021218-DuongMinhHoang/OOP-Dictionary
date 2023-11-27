@@ -117,7 +117,7 @@ public class hellocontroller {
             new SceneSwitch(search, "searchbar/search.fxml");
             // p.setScaleShape(true);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
 

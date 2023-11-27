@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.ImageIcon;
+//import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import com.example.hello.data.Word;
@@ -52,11 +52,11 @@ public class HangMan {
         wordSource = Files.readAllLines(path);
     }
 
-    private String getRandomWord() {
-        Random random = new Random();
-        int randomIndex = random.nextInt(wordSource.size());
-        return wordSource.get(randomIndex);
-    }
+    // private String getRandomWord() {
+    //     Random random = new Random();
+    //     int randomIndex = random.nextInt(wordSource.size());
+    //     return wordSource.get(randomIndex);
+    // }
 
     protected void createHiddenWord() {
         char[] charArray = new char[secretWord.length()];
@@ -71,7 +71,7 @@ public class HangMan {
             image = new Image(getClass().getResource(imagePath).toExternalForm());
             imageView.setImage(image);
         }
-        System.out.println(wrongtimes+1);
+        System.out.println("Wrong times: "+wrongtimes);
     }
 
     protected boolean isCharInWord(char s) {
