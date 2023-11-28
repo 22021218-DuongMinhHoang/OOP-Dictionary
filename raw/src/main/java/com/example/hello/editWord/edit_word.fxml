@@ -22,9 +22,9 @@
          <children>
             <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Định nghĩa mới" />
             <TextField fx:id="newDes" prefHeight="90.0" />
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Từ loại mới" />
+            <Label fx:id="typeLabel" alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Từ loại mới" />
             <ChoiceBox fx:id="newType" prefHeight="60.0" prefWidth="300.0" />
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Phiên âm mới" />
+            <Label fx:id="pronunLabel" alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Phiên âm mới" />
             <TextField fx:id="newIpa" prefHeight="60.0" />
          </children>
       </VBox>
@@ -44,5 +44,10 @@
          </image>
       </ImageView>
       <Button layoutX="346.0" layoutY="141.0" mnemonicParsing="false" onAction="#edit" prefHeight="50.0" prefWidth="60.0" text="Sửa" />
+      <Button fx:id="changLangButton" alignment="CENTER" layoutX="561.0" layoutY="81.0" mnemonicParsing="false" onAction="#changeLang" text="EntoViet">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

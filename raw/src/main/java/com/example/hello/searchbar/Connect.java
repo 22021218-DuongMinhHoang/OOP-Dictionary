@@ -73,8 +73,10 @@ public class Connect {
                 Statement stm2 = conn2.createStatement();
                 ResultSet rss2 = stm2.executeQuery(sql)) {
               while (rss2.next()) {
-                Word w = new Word(rss2.getString("word"), rss2.getString("html"),
+                Word w;
+                w = new Word(rss2.getString("word"), rss2.getString("html"),
                     rss2.getString("description"), rss2.getString("pronounce"));
+
                 fw.add(w);
               }
             } catch (SQLException e) {
@@ -91,8 +93,8 @@ public class Connect {
     return fw;
   }
 
-  public static Word getRandomWord() {
-    String sql = "SELECT word, html, description, pronounce FROM av ORDER BY RANDOM() LIMIT 1";
+  public static Word getRandomWord(String table) {
+    String sql = "SELECT word, html, description, pronounce FROM " + table + " ORDER BY RANDOM() LIMIT 1";
     Word w = null;
     try (Connection conn = connect();
         Statement stm = conn.createStatement();
@@ -119,8 +121,8 @@ public class Connect {
     return "";
   }
 
-  private static int getMaxIdFromTable() {
-    String sql = "SELECT MAX(id) FROM av";
+  private static int getMaxIdFromTable(String table) {
+    String sql = "SELECT MAX(id) FROM " + table;
 
     try (Connection conn = connect();
         Statement statement = conn.createStatement();
@@ -135,23 +137,40 @@ public class Connect {
     return 0;
   }
 
-  public static Word getWord(String word) {
+  public static Word getWord(String word, String table) {
     Word w = null;
     boolean isDelete = false;
     try {
-      if (checkCommand("av")) {
-        String sql = "SELECT word, html, description, pronounce, isDelete FROM av WHERE word = '" + word.toLowerCase()
-            + "'";
-        try (Connection conn = connect();
-            Statement stm = conn.createStatement();
-            ResultSet rss = stm.executeQuery(sql)) {
-          while (rss.next()) {
-            w = new Word(rss.getString("word"), rss.getString("html"),
-                rss.getString("description"), rss.getString("pronounce"));
-            isDelete = rss.getBoolean("isDelete");
+      if (table.equals(ANHVIET)) {
+        if (checkCommand(table)) {
+          String sql = "SELECT word, html, description, pronounce, isDelete FROM av WHERE word = '" + word.toLowerCase()
+              + "'";
+          try (Connection conn = connect();
+              Statement stm = conn.createStatement();
+              ResultSet rss = stm.executeQuery(sql)) {
+            while (rss.next()) {
+              w = new Word(rss.getString("word"), rss.getString("html"),
+                  rss.getString("description"), rss.getString("pronounce"));
+              isDelete = rss.getBoolean("isDelete");
+            }
+          } catch (SQLException e) {
+            System.out.println(e.getMessage());
           }
-        } catch (SQLException e) {
-          System.out.println(e.getMessage());
+        }
+      } else {
+        if (checkCommand(table)) {
+          String sql = "SELECT word, html, isDelete FROM va WHERE word = '" + word.toLowerCase()
+              + "'";
+          try (Connection conn = connect();
+              Statement stm = conn.createStatement();
+              ResultSet rss = stm.executeQuery(sql)) {
+            while (rss.next()) {
+              w = new Word(rss.getString("word"), rss.getString("html"));
+              isDelete = rss.getBoolean("isDelete");
+            }
+          } catch (SQLException e) {
+            System.out.println(e.getMessage());
+          }
         }
       }
     } catch (WrongCommandException e) {
@@ -162,24 +181,43 @@ public class Connect {
     return w;
   }
 
-  public static void insertWord(Word newWord) {
+  public static void insertWord(Word newWord, String table) {
     // if (!doesWordExist(newWord.getWord())) {
     try {
-      if (checkCommand("av")) {
-        int id = getMaxIdFromTable() + 1;
-        String sql = "INSERT INTO av (id, word, html, description, pronounce,isDelete) VALUES (?, ?, ?, ?, ?,0)";
+      if (table.equals(ANHVIET)) {
 
-        try (Connection conn = connect();
-            PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-          preparedStatement.setInt(1, id);
-          preparedStatement.setString(2, newWord.getWord());
-          preparedStatement.setString(3, newWord.getHtml());
-          preparedStatement.setString(4, newWord.getDescription());
-          preparedStatement.setString(5, newWord.getPronunciation());
-          preparedStatement.executeUpdate();
-          System.out.println("sucessfully added to db");
-        } catch (SQLException e) {
-          System.out.println("Error executing SQL: " + e.getMessage());
+        if (checkCommand(table)) {
+          int id = getMaxIdFromTable(table) + 1;
+          String sql = "INSERT INTO av (id, word, html, description, pronounce,isDelete) VALUES (?, ?, ?, ?, ?,0)";
+
+          try (Connection conn = connect();
+              PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, newWord.getWord());
+            preparedStatement.setString(3, newWord.getHtml());
+            preparedStatement.setString(4, newWord.getDescription());
+            preparedStatement.setString(5, newWord.getPronunciation());
+            preparedStatement.executeUpdate();
+            System.out.println("sucessfully added to db " + table);
+          } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
+          }
+        }
+      } else if (table.equals(VIETANH)) {
+        if (checkCommand(table)) {
+          int id = getMaxIdFromTable(table) + 1;
+          String sql = "INSERT INTO va (id, word, html, isDelete) VALUES (?, ?, ?,0)";
+          try (Connection conn = connect();
+              PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, newWord.getWord());
+            preparedStatement.setString(3, newWord.getHtml());
+            ;
+            preparedStatement.executeUpdate();
+            System.out.println("sucessfully added to db");
+          } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
+          }
         }
       }
     } catch (WrongCommandException e) {
@@ -190,29 +228,51 @@ public class Connect {
     // }
   }
 
-  public static void updateWord(Word updatedWord) {
+  public static void updateWord(Word updatedWord, String table) {
     try {
-      if (checkCommand("av")) {
-        String sql = "UPDATE av SET html = ?, description = ?, pronounce = ?, isDelete = 0 WHERE word = ?";
+      if (table.equals(ANHVIET)) {
+        if (checkCommand(table)) {
+          String sql = "UPDATE av SET html = ?, description = ?, pronounce = ?, isDelete = 0 WHERE word = ?";
 
-        try (Connection conn = connect();
-            PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+          try (Connection conn = connect();
+              PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
 
-          preparedStatement.setString(1, updatedWord.getHtml());
-          preparedStatement.setString(2, updatedWord.getDescription());
-          preparedStatement.setString(3, updatedWord.getPronunciation());
-          preparedStatement.setString(4, updatedWord.getWord());
+            preparedStatement.setString(1, updatedWord.getHtml());
+            preparedStatement.setString(2, updatedWord.getDescription());
+            preparedStatement.setString(3, updatedWord.getPronunciation());
+            preparedStatement.setString(4, updatedWord.getWord());
 
-          int rowsAffected = preparedStatement.executeUpdate();
+            int rowsAffected = preparedStatement.executeUpdate();
 
-          if (rowsAffected > 0) {
-            System.out.println("Successfully updated in the database");
-          } else {
-            System.out.println("Word not found in the database");
+            if (rowsAffected > 0) {
+              System.out.println("Successfully updated in the database av");
+            } else {
+              System.out.println("Word not found in the database av");
+            }
+
+          } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
           }
+        }
+      } else if (table.equalsIgnoreCase(VIETANH)) {
+        if (checkCommand(table)) {
+          String sql = "UPDATE va SET html = ?, isDelete = 0 WHERE word = ?";
 
-        } catch (SQLException e) {
-          System.out.println("Error executing SQL: " + e.getMessage());
+          try (Connection conn = connect();
+              PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, updatedWord.getHtml());
+            preparedStatement.setString(2, updatedWord.getWord());
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+              System.out.println("Successfully updated in the database va");
+            } else {
+              System.out.println("Word not found in the database va ");
+            }
+
+          } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
+          }
         }
       }
     } catch (WrongCommandException e) {
@@ -220,25 +280,25 @@ public class Connect {
     }
   }
 
-  public static boolean doesWordExist(String word) {
-    return getWord(word) != null;
+  public static boolean doesWordExist(String word, String table) {
+    return getWord(word, table) != null;
   }
 
-  public static void deleteWord(String wordToDelete) {
+  public static void deleteWord(String wordToDelete, String table) {
     wordToDelete = wordToDelete.toLowerCase();
-    if (doesWordExist(wordToDelete)) {
+    if (doesWordExist(wordToDelete, table)) {
       try {
-        if (checkCommand("av")) {
-          String sql = "UPDATE av SET isdelete = 1 WHERE word = ?";
+        if (checkCommand(table)) {
+          String sql = "UPDATE " + table + " SET isdelete = 1 WHERE word = ?";
           try (Connection conn = connect();
               PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
             preparedStatement.setString(1, wordToDelete);
             // Execute the update and check if one row was deleted
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
-              System.out.println("Deletion successful!");
+              System.out.println("Deletion successful! in table " + table);
             } else {
-              System.out.println("Word not found or deletion failed!");
+              System.out.println("Word not found or deletion failed!in table " + table);
             }
           } catch (SQLException e) {
             System.out.println("Error executing SQL: " + e.getMessage());
@@ -249,25 +309,23 @@ public class Connect {
         System.out.println("Wrong command: " + e.getMessage());
         // Handle the exception according to your needs
       }
-    } else {
-
     }
   }
 
-  public static void restoreWordToDb(String wordToRestore) {
+  public static void restoreWordToDb(String wordToRestore, String table) {
     wordToRestore = wordToRestore.toLowerCase();
     try {
-      if (checkCommand("av")) {
-        String sql = "UPDATE av SET isdelete = 0 WHERE word = ?";
+      if (checkCommand(table)) {
+        String sql = "UPDATE " + table + " SET isdelete = 0 WHERE word = ?";
         try (Connection conn = connect();
             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
           preparedStatement.setString(1, wordToRestore);
           int rowsAffected = preparedStatement.executeUpdate();
 
           if (rowsAffected > 0) {
-            System.out.println("Restoration successful!");
+            System.out.println("Restoration successful! in table " + table);
           } else {
-            System.out.println("Word not found or restoration failed!");
+            System.out.println("Word not found or restoration failed! in table " + table);
           }
         } catch (SQLException e) {
           // Log the exception or throw a custom exception for better error handling
@@ -283,10 +341,10 @@ public class Connect {
     }
   }
 
-  public static void restoreAllWordsToDb() {
+  public static void restoreAllWordsToDb(String table) {
     try {
-      if (checkCommand("av")) {
-        String sql = "UPDATE av SET isdelete = 0 WHERE isdelete = 1";
+      if (checkCommand(table)) {
+        String sql = "UPDATE " + table + " SET isdelete = 0 WHERE isdelete = 1";
         try (Connection conn = connect();
             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
 
@@ -312,6 +370,6 @@ public class Connect {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    getRandomWord();
+    // getRandomWord();
   }
 }
