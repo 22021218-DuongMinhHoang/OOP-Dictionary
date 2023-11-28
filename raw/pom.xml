@@ -44,6 +44,12 @@
     <artifactId>jlayer</artifactId>
     <version>1.0.1</version>
     </dependency>
+    <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-media</artifactId>
+    <version>15</version>
+    <type>pom</type>
+</dependency>
   </dependencies>
 
   <build>

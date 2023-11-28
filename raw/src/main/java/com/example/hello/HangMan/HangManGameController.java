@@ -189,7 +189,7 @@ public class HangManGameController extends HangMan {
         hearts = Arrays.asList(h1, h2, h3, h4, h5, h6, h7);
         showHangMan(imageView);
         secretWord = getScrectWord();
-        searchAndDisplayImage(secretWord);
+        // searchAndDisplayImage(secretWord);
         createHiddenWord();
         meaning.setVisible(false);
         meaning.setText(getMeaning());
@@ -235,48 +235,50 @@ public class HangManGameController extends HangMan {
                 "-fx-background-color: #EEE8AA; -fx-text-fill: black; -fx-font-size: 18px; -fx-font-weight: bold;");
     }
 
-    private void searchAndDisplayImage(String keyword) {
-        keyword = keyword.toLowerCase().replace(' ', '+');
-        try {
-            // Build the API URL with the search term
-            String apiUrl = "https://api.unsplash.com/search/photos?query=" + keyword.toLowerCase() + "&client_id="
-                    + accessKey;
+    // private void searchAndDisplayImage(String keyword) {
+    // keyword = keyword.toLowerCase().replace(' ', '+');
+    // try {
+    // // Build the API URL with the search term
+    // String apiUrl = "https://api.unsplash.com/search/photos?query=" +
+    // keyword.toLowerCase() + "&client_id="
+    // + accessKey;
 
-            // Make the API request
-            URL url = new URL(apiUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+    // // Make the API request
+    // URL url = new URL(apiUrl);
+    // HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    // connection.setRequestMethod("GET");
 
-            // Read API response
-            InputStream responseStream = connection.getInputStream();
-            String jsonResponse = convertStreamToString(responseStream);
+    // // Read API response
+    // InputStream responseStream = connection.getInputStream();
+    // String jsonResponse = convertStreamToString(responseStream);
 
-            // Parse JSON response as an object
-            JSONObject responseObject = new JSONObject(jsonResponse);
+    // // Parse JSON response as an object
+    // JSONObject responseObject = new JSONObject(jsonResponse);
 
-            // Check if the response contains the "results" property
-            if (responseObject.has("results")) {
-                // If it does, get the first result's "urls" property
-                JSONArray resultsArray = responseObject.getJSONArray("results");
-                if (resultsArray.length() > 0) {
-                    String imageUrl = resultsArray.getJSONObject(0).getJSONObject("urls").getString("regular");
+    // // Check if the response contains the "results" property
+    // if (responseObject.has("results")) {
+    // // If it does, get the first result's "urls" property
+    // JSONArray resultsArray = responseObject.getJSONArray("results");
+    // if (resultsArray.length() > 0) {
+    // String imageUrl =
+    // resultsArray.getJSONObject(0).getJSONObject("urls").getString("regular");
 
-                    // Load image from the URL
-                    Image image = new Image(imageUrl);
-                    hint.setImage(image);
-                }
-            } else {
-                // Handle the case where "results" property is not found in the response
-                System.out.println("Invalid JSON response. 'results' property not found.");
-            }
+    // // Load image from the URL
+    // Image image = new Image(imageUrl);
+    // hint.setImage(image);
+    // }
+    // } else {
+    // // Handle the case where "results" property is not found in the response
+    // System.out.println("Invalid JSON response. 'results' property not found.");
+    // }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // } catch (IOException e) {
+    // e.printStackTrace();
+    // }
+    // }
 
-    private String convertStreamToString(InputStream inputStream) {
-        Scanner scanner = new Scanner(inputStream).useDelimiter("\\A");
-        return scanner.hasNext() ? scanner.next() : "";
-    }
+    // private String convertStreamToString(InputStream inputStream) {
+    // Scanner scanner = new Scanner(inputStream).useDelimiter("\\A");
+    // return scanner.hasNext() ? scanner.next() : "";
+    // }
 }
