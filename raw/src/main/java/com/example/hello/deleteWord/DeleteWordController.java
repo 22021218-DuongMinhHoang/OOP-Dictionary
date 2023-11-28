@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -17,6 +18,17 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class DeleteWordController {
+
+    private static final String ANHVIET = Connect.ANHVIET;
+    
+    private static final String VIETANH = Connect.VIETANH;
+    private String currentLang;
+
+    @FXML
+    private Label headLabel;
+
+    @FXML
+    private Button changeLangBut;
 
     @FXML
     private Button button;
@@ -29,12 +41,19 @@ public class DeleteWordController {
         handleDelete();
     }
 
+    @FXML
+    void changeLang(ActionEvent event) {
+        currentLang = currentLang.equals(ANHVIET) ? VIETANH : ANHVIET;
+        String EntoVtoEn = changeLangBut.getText();
+        changeLangBut.setText(EntoVtoEn.equalsIgnoreCase("Tiếng Anh") ? "Tiếng Việt" : "Tiếng Anh");
+    }
+
     private void handleDelete() {
         String wordToDelete = word.getText().toLowerCase();
         word.clear();
-        if (Connect.doesWordExist(wordToDelete)) {
+        if (Connect.doesWordExist(wordToDelete,currentLang)) {
             if (showNoticePane(wordToDelete)) {
-                Connect.deleteWord(wordToDelete);
+                Connect.deleteWord(wordToDelete,currentLang);
                 WordFile.writeWordsToFile(wordToDelete);
                 showAlert("Thành công", "Đã xóa '" + wordToDelete + "' khỏi từ điển", "assets/success.png");
             }
@@ -73,6 +92,7 @@ public class DeleteWordController {
     @FXML
     private void initialize() {
         // Add an event filter to handle the Enter key press
+        currentLang = ANHVIET;
         word.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 handleDelete();
