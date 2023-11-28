@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.editWord.EditWordController">
+   <children>
+      <VBox layoutX="20.0" layoutY="180.0" prefHeight="330.0" prefWidth="300.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Thông tin hiện tại của từ" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+            <Label fx:id="oldDes" alignment="TOP_LEFT" prefHeight="302.0" prefWidth="300.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="426.0" layoutY="180.0" prefHeight="330.0" prefWidth="300.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Định nghĩa mới" />
+            <TextField fx:id="newDes" prefHeight="90.0" />
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Từ loại mới" />
+            <ChoiceBox fx:id="newType" prefHeight="60.0" prefWidth="300.0" />
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="300.0" text="Phiên âm mới" />
+            <TextField fx:id="newIpa" prefHeight="60.0" />
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="228.0" layoutY="14.0" prefHeight="40.0" prefWidth="272.0" text="Hãy chọn từ muốn sửa">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="wordSource" alignment="CENTER" layoutX="264.0" layoutY="63.0" prefHeight="71.0" prefWidth="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="497.0" layoutY="81.0" onMouseClicked="#find" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/search.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="346.0" layoutY="141.0" mnemonicParsing="false" onAction="#edit" prefHeight="50.0" prefWidth="60.0" text="Sửa" />
+   </children>
+</Pane>
