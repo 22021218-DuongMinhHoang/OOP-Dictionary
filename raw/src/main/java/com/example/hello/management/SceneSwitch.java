@@ -27,7 +27,7 @@ public class SceneSwitch {
 
     public static void changeScene(Pane currentPane, String fxml) throws IOException {
         Pane pane = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource(fxml)));
-        currentPane.getChildren().removeAll();
+        currentPane.getChildren().clear();
         currentPane.getChildren().add(pane);
         pane.setPrefSize(currentPane.getWidth(), currentPane.getHeight());
     }

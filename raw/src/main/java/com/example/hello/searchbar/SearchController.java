@@ -118,18 +118,18 @@ public class SearchController implements Initializable {
             Text t = new Text(desList.get(i));
             t.setWrappingWidth(180);
             String str = desList.get(i);
-            if (str.equals("danh từ") ||
-                str.equals("động từ") ||
-                str.equals("tính từ") ||
-                str.equals("thán từ") ||
-                str.equals("mạo từ") ||
-                str.equals("nội động từ") ||
-                str.equals("ngoại động từ") ||
-                str.equals("thành ngữ") ||
-                str.equals("đại từ") ||
-                str.equals("thán từ")) {
+            if (str.toLowerCase().equals("danh từ") ||
+                str.toLowerCase().equals("động từ") ||
+                str.toLowerCase().equals("tính từ") ||
+                str.toLowerCase().equals("thán từ") ||
+                str.toLowerCase().equals("mạo từ") ||
+                str.toLowerCase().equals("nội động từ") ||
+                str.toLowerCase().equals("ngoại động từ") ||
+                str.toLowerCase().equals("thành ngữ") ||
+                str.toLowerCase().equals("đại từ") ||
+                str.toLowerCase().equals("thán từ")) {
               t.setUnderline(true);
-              t.setFont(Font.font("verdana", FontWeight.BLACK, FontPosture.REGULAR, 20));
+              t.setFont(Font.font("verdana", FontWeight.BLACK, FontPosture.REGULAR, 18));
               t.setText("\n" + str + ":");
             }
             t.setTextAlignment(TextAlignment.LEFT);

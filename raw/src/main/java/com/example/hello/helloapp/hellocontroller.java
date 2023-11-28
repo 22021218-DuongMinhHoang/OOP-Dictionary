@@ -36,6 +36,9 @@ public class hellocontroller {
     private Tab tabgame;
 
     @FXML
+    private Tab tabsetting;
+
+    @FXML
     private TabPane mainPane;
 
     @FXML
@@ -152,6 +155,14 @@ public class hellocontroller {
                 SceneSwitch.changeTab(tabgame, "game/mainGame.fxml",
                         oldTabIndex, 3);
                 oldTabIndex = 3;
+            }
+        });
+
+        tabsetting.setOnSelectionChanged(event -> {
+            if (tabsetting.isSelected()) {
+                SceneSwitch.changeTab(tabsetting, "management/setting.fxml",
+                        oldTabIndex, 4);
+                oldTabIndex = 4;
             }
         });
 
