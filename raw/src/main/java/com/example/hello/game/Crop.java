@@ -50,4 +50,8 @@ public class Crop {
   public String toString() {
     return "crop++";
   }
+
+  public void deadPlant() {
+    days = -1;
+  }
 }

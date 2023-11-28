@@ -193,5 +193,6 @@
          </children>
       </GridPane>
       <Pane fx:id="shopPane" layoutX="250.0" layoutY="132.0" prefHeight="348.0" prefWidth="424.0" style="-fx-background-color: rgb(255, 255, 146); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 2;" visible="false" />
+      <Pane fx:id="hangman" layoutX="145.0" layoutY="50.0" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: white;" />
    </children>
 </Pane>

@@ -11,8 +11,10 @@ public class Inventory {
   private Map<CropType, IntegerProperty> seeds;
   private Map<CropType, IntegerProperty> storage;
   private IntegerProperty money;
+  private IntegerProperty badDays;
 
   private Inventory() {
+    badDays = new SimpleIntegerProperty(0);
     seeds = new Hashtable<>();
     storage = new Hashtable<>();
     seeds.put(CropType.PARSNIP, new SimpleIntegerProperty(5));
@@ -87,5 +89,9 @@ public class Inventory {
 
   public int getCropStorageNumber(CropType type) {
     return storage.get(type).get();
+  }
+
+  public IntegerProperty getBadDays() {
+    return badDays;
   }
 }

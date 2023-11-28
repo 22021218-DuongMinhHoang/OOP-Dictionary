@@ -2,11 +2,14 @@ package com.example.hello.game;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import com.example.hello.data.Word;
 import com.example.hello.management.SceneSwitch;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -80,6 +83,9 @@ public class GameController implements Initializable {
   @FXML
   private Text rightAnswerNumber;
 
+  @FXML
+  private Pane hangman;
+
   Slot slot1;
 
   Slot[] plantSlot;
@@ -105,6 +111,7 @@ public class GameController implements Initializable {
       for (int i = 0; i < 4; i++) {
         choice[i] = new Button();
         choice[i].setText(word[i].getWord());
+        choice[i].setWrapText(true);
         switch (i) {
           case 0:
             choice[i].setOnAction(new EventHandler<ActionEvent>() {
@@ -170,6 +177,13 @@ public class GameController implements Initializable {
     for (int i = 0; i < 6; i++) {
       plantSlot[i].nextDay();
     }
+    try {
+      hangman.setVisible(true);
+      SceneSwitch.changeScene(hangman, "HangMan/menu.fxml");
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
 
   @Override
@@ -179,6 +193,8 @@ public class GameController implements Initializable {
     levelPane.setVisible(false);
     shopPane.setVisible(false);
     plantSlot = new Slot[6];
+
+    hangman.setVisible(false);
 
     for (int i = 0; i < 6; i++) {
       plantSlot[i] = customSlotInGarden(i);
@@ -200,6 +216,28 @@ public class GameController implements Initializable {
 
     sweetgemNumber.textProperty().bind(Inventory.getInstance().getSeedsProperty(CropType.SWEETGEMBERRY).asString());
     sweetgemStorage.textProperty().bind(Inventory.getInstance().getStorageProperty(CropType.SWEETGEMBERRY).asString());
+
+    Inventory.getInstance().getBadDays().addListener(new ChangeListener<Number>() {
+      @Override
+      public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+        int ran = (new Random()).nextInt(6);
+        boolean hasPlant = false;
+        for (int i = 0; i < 6; i++) {
+          if (plantSlot[i].getCrop() != null) {
+            hasPlant = true;
+            break;
+          }
+        }
+        if (hasPlant) {
+          while (plantSlot[ran].getCrop() == null) {
+            ran = (new Random()).nextInt(6);
+          }
+          plantSlot[ran].getCrop().deadPlant();
+          plantSlot[ran].nextDay();
+          System.out.println("???");
+        }
+      }
+    });
   }
 
   public void shopping() {
