@@ -116,7 +116,7 @@ public class SearchController implements Initializable {
           System.out.println(wordBox.getChildren().size());
           for (int i = 2; i < desList.size(); i++) {
             Text t = new Text(desList.get(i));
-            t.setWrappingWidth(180);
+            t.setWrappingWidth(500);
             String str = desList.get(i);
             if (str.toLowerCase().equals("danh từ") ||
                 str.toLowerCase().equals("động từ") ||
@@ -134,11 +134,12 @@ public class SearchController implements Initializable {
             }
             t.setTextAlignment(TextAlignment.LEFT);
             t.setFill(Color.BROWN);
-            if (desBox1.getChildren().size() < 12) {
-              desBox1.getChildren().add(t);
-            } else if (desBox2.getChildren().size() < 12) {
-              desBox2.getChildren().add(t);
-            }
+            // if (desBox1.getChildren().size() < 20) {
+            // desBox1.getChildren().add(t);
+            // } else if (desBox2.getChildren().size() < 12) {
+            // desBox2.getChildren().add(t);
+            // }
+            desBox1.getChildren().add(t);
           }
           searchBar.setText("");
         }
