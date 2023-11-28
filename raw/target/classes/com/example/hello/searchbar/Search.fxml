@@ -37,12 +37,12 @@
                         <Label layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <ListView fx:id="optionsBox" layoutX="5.0" layoutY="-23.0" maxHeight="-Infinity" prefHeight="17.0" prefWidth="560.0" />
                   <ScrollPane layoutX="45.0" layoutY="84.0" prefHeight="290.0" prefWidth="480.0" style="-fx-background-color: rgb(255, 255, 146);">
                      <content>
                         <VBox fx:id="desBox1" alignment="TOP_RIGHT" prefHeight="288.0" prefWidth="477.0" style="-fx-background-color: rgb(255, 255, 146);" />
                      </content>
                   </ScrollPane>
+                  <ListView fx:id="optionsBox" layoutX="5.0" layoutY="-23.0" maxHeight="-Infinity" prefHeight="17.0" prefWidth="560.0" />
                </children>
             </Pane>
          </children>
