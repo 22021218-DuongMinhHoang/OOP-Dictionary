@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.helloapp.hellocontroller">
   <children>
-      <TabPane fx:id="mainPane" prefHeight="600.0" prefWidth="900.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinHeight="90.0" tabMinWidth="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane fx:id="mainPane" prefHeight="600.0" prefWidth="900.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinHeight="60.0" tabMinWidth="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
             <Tab fx:id="tabsearch" closable="false">
                <content>

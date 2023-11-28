@@ -52,7 +52,8 @@ public class Connect {
     ObservableList<Word> fw = FXCollections.observableArrayList();
     try {
       if (checkCommand(command)) {
-        String sql = "SELECT word, html, description, pronounce FROM av WHERE word LIKE '" + word + "%' LIMIT 10";
+        String sql = "SELECT word, html, description, pronounce FROM " + command + " WHERE word LIKE '" + word
+            + "%' LIMIT 10";
         try (Connection conn = connect();
             Statement stm = conn.createStatement();
             ResultSet rss = stm.executeQuery(sql)) {
@@ -62,7 +63,8 @@ public class Connect {
             fw.add(w);
           }
           if (fw.size() < 10) {
-            sql = "SELECT word, html, description, pronounce FROM av WHERE word LIKE '%" + word + "%' LIMIT "
+            sql = "SELECT word, html, description, pronounce FROM " + command + " WHERE word LIKE '%" + word
+                + "%' AND NOT word LIKE '" + word + "' LIMIT "
                 + (10 - fw.size());
             try (Connection conn2 = connect();
                 Statement stm2 = conn2.createStatement();

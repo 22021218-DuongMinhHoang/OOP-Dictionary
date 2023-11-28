@@ -19,7 +19,7 @@ public class Crop {
     if (watered) {
       days++;
       watered = false;
-    } else {
+    } else if (getStatue() < 1) {
       watered = false;
       days = -1;
     }

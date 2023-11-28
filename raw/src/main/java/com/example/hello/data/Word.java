@@ -33,6 +33,8 @@ public class Word {
     s = s.replace("</li>", "BREAK");
     s = s.replace("<i>", "BREAK");
     s = s.replace("</i>", "BREAK");
+    s = s.replace("<ol>", "BREAK");
+    s = s.replace("</ol>", "BREAK");
     String[] s1 = s.split("BREAK");
     s = "";
     for (int i = 0; i < s1.length; i++) {
@@ -59,6 +61,10 @@ public class Word {
     s = s.replace("</li>", "BREAK");
     s = s.replace("<i>", "BREAK");
     s = s.replace("</i>", "BREAK");
+    s = s.replace("<ol>", "BREAK");
+    s = s.replace("</ol>", "BREAK");
+    s = s.replace("<br>", "BREAK");
+    s = s.replace("<br/>", "BREAK");
     String[] s1 = s.split("BREAK");
     for (int i = 0; i < s1.length; i++) {
       if (!s1[i].equals("")) {

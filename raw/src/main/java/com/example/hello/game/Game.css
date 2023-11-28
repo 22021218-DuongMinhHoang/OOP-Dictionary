@@ -1,0 +1,27 @@
+.button {
+    -fx-background-color:  rgb(255, 255, 146);
+    -fx-border-color:  rgb(201, 117, 31);
+    -fx-border-width: 2;
+}
+
+.button:hover {
+    -fx-border-color:  brown;
+}
+
+.menu-button:hover {
+    -fx-border-color:  rgb(201, 117, 31);
+}
+
+
+.menu-item {
+    -fx-background-color:  rgb(255, 255, 146);
+}
+
+.menu-item:hover {
+    -fx-border-color:  rgb(201, 117, 31);
+    -fx-text-fill: brown;
+}
+
+.menu-bar {
+    -fx-background-color:  rgb(255, 255, 146);
+}

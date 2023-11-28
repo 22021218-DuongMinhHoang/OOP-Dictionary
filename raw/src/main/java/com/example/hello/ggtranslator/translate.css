@@ -6,7 +6,7 @@
 }
 
 .button-sound {
-    -fx-background-color: rgb(255, 255, 146);
+    -fx-background-color: rgb(255, 255, 146, 0);
     -fx-background-image: url(resources/icons/speaker.png);
     -fx-background-size: cover;
 
@@ -17,4 +17,22 @@
     -fx-border-color: rgb(201, 117, 31);
     -fx-border-width: 2;
     -fx-text-fill: brown;
+}
+
+.button-translate {
+    -fx-background-color: rgba(255, 255, 146, 0);
+    -fx-background-image: url(resources/icons/Arrow.png);
+    -fx-background-size: 90 45;
+}
+
+.button-all:hover {
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 2;
+}
+
+.button-change {
+    -fx-background-color: rgba(255, 255, 146, 0);
+    -fx-background-image: url(resources/icons/TwoArrows.png);
+    -fx-background-size: 72 72;
+    -fx-background-repeat: 1;
 }

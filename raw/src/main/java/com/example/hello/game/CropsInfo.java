@@ -66,4 +66,21 @@ public class CropsInfo {
       return 3000;
     }
   }
+
+  public static String getStagePath(CropType type, int days) {
+    String path = "../resources/icons/";
+    path += getCropName(type) + "_Stage_%d.png";
+    int stage = 2;
+    if (days == 0) {
+      stage = 0;
+    } else if (days <= getCropTime(type)) {
+      stage = 1;
+    }
+    path = String.format(path, stage);
+    return path;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(getStagePath(CropType.SWEETGEMBERRY, 11));
+  }
 }

@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -80,6 +81,8 @@ public class GameController implements Initializable {
   private Text rightAnswerNumber;
 
   Slot slot1;
+
+  Slot[] plantSlot;
 
   public void start(CropType type, Slot slot) {
     int lv = 0;
@@ -164,23 +167,22 @@ public class GameController implements Initializable {
   }
 
   public void nextDay() {
-    slot1.nextDay();
+    for (int i = 0; i < 6; i++) {
+      plantSlot[i].nextDay();
+    }
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     // TODO Auto-generated method stub
+
     levelPane.setVisible(false);
     shopPane.setVisible(false);
+    plantSlot = new Slot[6];
 
-    slot1 = new Slot();
-    plantArea.add(slot1.getActions(), 0, 0);
-    slot1.getHarvestItem().setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        start(slot1.getCrop().getType(), slot1);
-      }
-    });
+    for (int i = 0; i < 6; i++) {
+      plantSlot[i] = customSlotInGarden(i);
+    }
 
     money.textProperty().bind(Inventory.getInstance().getMoneyProperty().asString());
 
@@ -213,5 +215,32 @@ public class GameController implements Initializable {
         }
       });
     }
+  }
+
+  private Slot customSlotInGarden(int index) {
+    plantSlot[index] = new Slot();
+
+    plantSlot[index].getHarvestItem().setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        start(plantSlot[index].getCrop().getType(), plantSlot[index]);
+        String style = "";
+        String path = getClass().getResource("../resources/icons/plantSlot.png").toExternalForm();
+        style += "-fx-background-color: rgb(0,0,0,0);";
+        style += "-fx-background-image: url(" + path + ");";
+        style += "-fx-background-size: cover;";
+        plantSlot[index].getActions().setStyle(style);
+      }
+    });
+    plantSlot[index].getActions().setPrefSize(48, 48);
+    String style = "";
+    String path = getClass().getResource("../resources/icons/plantSlot.png").toExternalForm();
+    style += "-fx-background-color: rgb(0,0,0,0);";
+    style += "-fx-background-image: url(" + path + ");";
+    style += "-fx-background-size: cover;";
+    plantSlot[index].getActions().setStyle(style);
+    plantSlot[index].getActions().setPopupSide(Side.RIGHT);
+    plantArea.add(plantSlot[index].getActions(), index % 3, index / 3);
+    return plantSlot[index];
   }
 }

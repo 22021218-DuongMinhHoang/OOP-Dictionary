@@ -28,7 +28,7 @@ public class Slot {
 
   public Slot() {
     crop = null;
-    actions = new MenuButton("Slot1");
+    actions = new MenuButton("");
 
     plant = new SplitMenuButton();
     plant.setText("Seeds");
@@ -37,7 +37,6 @@ public class Slot {
     harvest.setVisible(false);
 
     actions.getItems().add(harvest);
-    actions.setText("Plant");
 
     plantBag = new CustomMenuItem();
     updatePlantBag();
@@ -71,6 +70,12 @@ public class Slot {
           harvest.setVisible(false);
           destroy.setVisible(false);
           plantBag.setVisible(true);
+          String style = "";
+          String path = getClass().getResource("../resources/icons/plantSlot.png").toExternalForm();
+          style += "-fx-background-color: rgb(0,0,0,0);";
+          style += "-fx-background-image: url(" + path + ");";
+          style += "-fx-background-size: cover;";
+          actions.setStyle(style);
         }
       }
     });
@@ -84,9 +89,16 @@ public class Slot {
       public void handle(ActionEvent event) {
         if (Inventory.getInstance().takeSeed(type)) {
           crop = new Crop(type);
-          actions.setText(CropsInfo.getCropName(type));
           plantBag.setVisible((crop == null));
           water.setVisible(!crop.isWatered());
+          String style = "";
+          String path = getClass().getResource(CropsInfo.getStagePath(crop.getType(), crop.getDays())).toExternalForm();
+          style += "-fx-background-color: rgb(0,0,0,0);";
+          style += "-fx-background-image: url(" + path + ");";
+          style += "-fx-background-size: 30 40;";
+          style += "-fx-background-position: center;";
+          style += "-fx-background-repeat: no-repeat;";
+          actions.setStyle(style);
         }
       }
     });
@@ -109,6 +121,14 @@ public class Slot {
   public void nextDay() {
     if (crop != null) {
       crop.nextDay();
+      String style = "";
+      String path = getClass().getResource(CropsInfo.getStagePath(crop.getType(), crop.getDays())).toExternalForm();
+      style += "-fx-background-color: rgb(0,0,0,0);";
+      style += "-fx-background-image: url(" + path + ");";
+      style += "-fx-background-size: 30 40;";
+      style += "-fx-background-position: center;";
+      style += "-fx-background-repeat: no-repeat;";
+      actions.setStyle(style);
       if (crop.getStatue() > 0) {
         harvest.setVisible(true);
       } else if (crop.getStatue() == 0) {
@@ -116,7 +136,16 @@ public class Slot {
       } else {
         water.setVisible(false);
         destroy.setVisible(true);
+        style = "";
+        path = getClass().getResource("../resources/icons/Die_Crop.png").toExternalForm();
+        style += "-fx-background-color: rgb(0,0,0,0);";
+        style += "-fx-background-image: url(" + path + ");";
+        style += "-fx-background-size: 30 40;";
+        style += "-fx-background-position: center;";
+        style += "-fx-background-repeat: no-repeat;";
+        actions.setStyle(style);
       }
+
     }
   }
 
@@ -151,7 +180,6 @@ public class Slot {
     harvest.setVisible(false);
 
     plantBag.setVisible((crop == null));
-    actions.setText("Plant");
     updatePlantBag();
   }
 }
