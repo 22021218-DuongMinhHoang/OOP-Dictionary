@@ -84,6 +84,9 @@ public class HangMan {
             if (secretWord.charAt(i) == guessedChar) {
                 updatedHiddenWord.setCharAt(i, guessedChar);
             }
+            else if(secretWord.charAt(i) < 'a' || secretWord.charAt(i)> 'z'){
+                updatedHiddenWord.setCharAt(i, secretWord.charAt(i));
+            }
         }
         hiddenWord = updatedHiddenWord.toString();
     }
