@@ -126,7 +126,8 @@ public class SearchController implements Initializable {
                 str.equals("nội động từ") ||
                 str.equals("ngoại động từ") ||
                 str.equals("thành ngữ") ||
-                str.equals("đại từ")) {
+                str.equals("đại từ") ||
+                str.equals("thán từ")) {
               t.setUnderline(true);
               t.setFont(Font.font("verdana", FontWeight.BLACK, FontPosture.REGULAR, 20));
               t.setText("\n" + str + ":");
