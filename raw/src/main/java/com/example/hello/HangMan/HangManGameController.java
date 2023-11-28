@@ -90,7 +90,7 @@ public class HangManGameController extends HangMan {
         clickedLabel.setDisable(true);
         clickedLabel.setStyle("-fx-background-color: #90EE90;");
         guessedChar = label.getText().toLowerCase().charAt(0);
-        if (isCharInWord(guessedChar) && wrongtimes < MAX_PLAY_TIME) {
+        if (isCharInWord(guessedChar) && wrongtimes <= MAX_PLAY_TIME) {
             updateHiddenWord(guessedChar);
             secret.setText(hiddenWord);
             if (secretWord.equalsIgnoreCase(hiddenWord)) {
@@ -116,13 +116,36 @@ public class HangManGameController extends HangMan {
             }
 
         } else {
+            if (wrongtimes <= MAX_PLAY_TIME) {
+                if (wrongtimes == MAX_PLAY_TIME) {
+                    button.setDisable(true);
+                    wrongtimes = 8;
+                    showHangMan(imageView);
+                    PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+                    pause.setOnFinished(e -> {
 
-            if (wrongtimes < MAX_PLAY_TIME) {
+                        if (showLosePane()) {
+                            try {
+                                new SceneSwitch(pane, "HangMan/game.fxml");
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                        } else {
+                            try {
+                                new SceneSwitch(pane, "HangMan/menu.fxml");
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    });
+                    pause.play();
+                }
                 hearts.get(MAX_PLAY_TIME - wrongtimes - 1).setVisible(false);
                 wrongtimes++;
                 if (wrongtimes >= 4 && !meaning.isVisible()) {
                     meaning.setVisible(true);
                 }
+
                 showHangMan(imageView);
             } else {
                 button.setDisable(true);
