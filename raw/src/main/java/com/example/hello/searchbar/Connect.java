@@ -289,7 +289,7 @@ public class Connect {
     if (doesWordExist(wordToDelete, table)) {
       try {
         if (checkCommand(table)) {
-          String sql = "UPDATE " + table + " SET isdelete = 1 WHERE word = ?";
+          String sql = "UPDATE " + table + " SET isdelete = 1, isMarked = 0 WHERE word = ?";
           try (Connection conn = connect();
               PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
             preparedStatement.setString(1, wordToDelete);
