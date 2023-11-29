@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.hello.data.Word;
 import com.example.hello.searchbar.Connect;
 
 import javafx.collections.FXCollections;
