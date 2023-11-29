@@ -4,6 +4,11 @@ package com.example.hello.helloapp;
 
 import com.example.hello.management.SceneSwitch;
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -16,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -74,6 +80,9 @@ public class hellocontroller {
     private Tab t1;
 
     @FXML
+    private ImageView background;
+
+    @FXML
     void Search(ActionEvent event) {
 
     }
@@ -123,7 +132,7 @@ public class hellocontroller {
         assert search != null : "fx:id=\"search\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'hello-view.fxml'.";
 
-        mainPane.getSelectionModel().select(1);
+        mainPane.getSelectionModel().select(2);
 
         // SceneSwitch.loadFXML(tabsearch, "searchbar/search.fxml");
         tabsearch.setOnSelectionChanged(event -> {
@@ -137,16 +146,16 @@ public class hellocontroller {
         tabtranslate.setOnSelectionChanged(event -> {
             if (tabtranslate.isSelected()) {
                 SceneSwitch.changeTab(tabtranslate, "ggtranslator/SentencesTranslating.fxml",
-                        oldTabIndex, 2);
-                oldTabIndex = 2;
+                        oldTabIndex, 1);
+                oldTabIndex = 1;
             }
         });
 
         tabhome.setOnSelectionChanged(event -> {
             if (tabhome.isSelected()) {
                 SceneSwitch.changeTab(tabhome, "ggtranslator/SentencesTranslating.fxml",
-                        oldTabIndex, 1);
-                oldTabIndex = 1;
+                        oldTabIndex, 2);
+                oldTabIndex = 2;
             }
         });
 
@@ -165,6 +174,18 @@ public class hellocontroller {
                 oldTabIndex = 4;
             }
         });
+    }
 
+    public void start() {
+        // SceneSwitch.changeTabHome(tabhome);
+        TranslateTransition home = new TranslateTransition(Duration.seconds(0.5), mainPane);
+        home.setByY(-600);
+        home.setCycleCount(1);
+        home.play();
+
+        TranslateTransition image = new TranslateTransition(Duration.seconds(1), background);
+        image.setByY(304.5);
+        image.setCycleCount(1);
+        image.play();
     }
 }

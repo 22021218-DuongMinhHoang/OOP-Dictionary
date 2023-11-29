@@ -17,11 +17,6 @@
     -fx-border-color:  rgb(201, 117, 31);
 }
 
-
-.label {
-    -fx-text-fill: brown;
-}
-
 #shopPane {
     -fx-background-color:  white;
     -fx-border-color:  rgb(201, 117, 31);
