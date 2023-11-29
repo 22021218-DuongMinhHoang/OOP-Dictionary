@@ -15,7 +15,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.searchbar.SearchController">
    <children>
-      <Pane layoutX="85.0" layoutY="20.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5; -fx-border-radius: 5;" />
+      <Pane layoutX="85.0" layoutY="20.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5; -fx-border-radius: 5;">
+         <children>
+            <Button layoutX="653.0" layoutY="65.0" mnemonicParsing="false" onAction="#mark" prefHeight="29.0" prefWidth="70.0" style="-fx-border-radius: 5;" styleClass="button_change" text="Đánh dấu">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+         </children></Pane>
       <Pane prefHeight="563.0" prefWidth="728.0">
          <children>
             <Pane layoutX="165.0" layoutY="96.0" prefHeight="420.0" prefWidth="570.0" style="-fx-border-color: rgb(201, 117, 31); -fx-background-color: white; -fx-border-width: 3; -fx-border-radius: 5;">

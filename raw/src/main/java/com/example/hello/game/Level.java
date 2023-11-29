@@ -12,7 +12,7 @@ public class Level {
   public Level() {
     options = new Word[4];
     for (int i = 0; i < 4; i++) {
-      options[i] = Connect.getRandomWord();
+      options[i] = Connect.getRandomWord(Connect.ANHVIET);
     }
     rightAnswer = (new Random()).nextInt(4);
   }

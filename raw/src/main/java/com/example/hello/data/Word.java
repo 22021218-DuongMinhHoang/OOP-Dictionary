@@ -37,6 +37,12 @@ public class Word {
     this.html = word + "BREAK" + pronounce + "BREAK" + this.type + "BREAK" + description;
   }
 
+  public Word(String word, String html) {
+    this.word = word;
+    this.html = html;
+    this.html = getFullDescription();
+  }
+
   public String getTypeString(int t) {
     String type = null;
     switch (t) {

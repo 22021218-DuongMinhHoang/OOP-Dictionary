@@ -9,6 +9,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -33,6 +36,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
 import com.example.hello.data.Word;
+import com.example.hello.history.HistoryController;
 import com.example.hello.speech.SoundPlayer;
 
 public class SearchController implements Initializable {
@@ -95,6 +99,7 @@ public class SearchController implements Initializable {
       @Override
       public void changed(ObservableValue<? extends Word> observable, Word oldValue, Word newValue) {
         currentWord = newValue;
+        HistoryController.writeWordsToFile(currentWord.getWord(), translateEnVi ? Connect.ANHVIET : Connect.VIETANH);
         if (optionsBox.getItems().size() != 0) {
           // searchResult.setText(newValue.getFullDescription());
           List<String> desList = newValue.getDescriptionList();
@@ -190,5 +195,23 @@ public class SearchController implements Initializable {
     } else {
       System.out.println("null");
     }
+  }
+
+  @FXML
+  void mark(ActionEvent event) {
+    Connect.markWord(currentWord.getWord(), translateEnVi ? Connect.ANHVIET : Connect.VIETANH);
+    showAlert("Thành công", "Đã thêm từ '" + currentWord.getWord() + "' vào mục yêu thích", "images/success.png");
+
+  }
+
+  private void showAlert(String title, String content, String iconPath) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(content);
+    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+    Image icon = new Image(getClass().getResource(iconPath).toExternalForm());
+    stage.getIcons().add(icon);
+    alert.showAndWait();
   }
 }

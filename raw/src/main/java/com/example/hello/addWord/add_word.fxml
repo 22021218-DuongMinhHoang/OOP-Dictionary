@@ -10,45 +10,53 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.addWord.AddWordController">
    <children>
-      <TextField fx:id="word" layoutX="148.0" layoutY="132.0" prefHeight="88.0" prefWidth="186.0">
+      <TextField fx:id="word" layoutX="148.0" layoutY="132.0" prefHeight="88.0" prefWidth="186.0" style="-fx-border-color: rgb(201, 117, 31); -fx-border-width: 2; -fx-border-radius: 3;">
          <font>
             <Font size="24.0" />
          </font></TextField>
       <Label layoutX="273.0" layoutY="21.0" text="Thêm từ mới">
          <font>
-            <Font size="36.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Label>
       <Label layoutX="431.0" layoutY="235.0" prefHeight="24.0" prefWidth="72.0" text="Loại từ">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="414.0" layoutY="132.0" text="Phát âm">
+      <Label fx:id="ipLabel" layoutX="414.0" layoutY="132.0" text="Phát âm">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Label layoutX="40.0" layoutY="235.0" text="Định nghĩa">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="132.0" text="Từ tiếng Anh">
+      <Label fx:id="wordLabel" layoutX="20.0" layoutY="132.0" text="Từ tiếng Anh">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="type" layoutX="503.0" layoutY="244.0" prefHeight="42.0" prefWidth="114.0" />
-      <Button fx:id="ok" layoutX="348.0" layoutY="463.0" mnemonicParsing="false" onAction="#wordAction" prefHeight="53.0" prefWidth="54.0" text="OK" />
-      <TextArea fx:id="description" layoutX="148.0" layoutY="237.0" prefHeight="236.0" prefWidth="194.0">
+      <ChoiceBox fx:id="type" layoutX="503.0" layoutY="244.0" prefHeight="30.0" prefWidth="114.0" style="-fx-border-color: rgb(201, 117, 31); -fx-border-width: 2; -fx-border-radius: 3; -fx-background-color: white;" />
+      <Button fx:id="ok" layoutX="635.0" layoutY="244.0" mnemonicParsing="false" onAction="#wordAction" prefHeight="42.0" prefWidth="54.0" text="OK">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextArea fx:id="description" layoutX="148.0" layoutY="237.0" prefHeight="236.0" prefWidth="194.0" style="-fx-border-color: rgb(201, 117, 31); -fx-border-width: 2; -fx-border-radius: 3;">
          <font>
             <Font size="24.0" />
          </font>
       </TextArea>
-      <TextField fx:id="ipa" layoutX="503.0" layoutY="132.0" prefHeight="88.0" prefWidth="186.0">
+      <TextField fx:id="ipa" layoutX="503.0" layoutY="132.0" prefHeight="88.0" prefWidth="186.0" style="-fx-border-color: rgb(201, 117, 31); -fx-border-width: 2; -fx-border-radius: 3;">
          <font>
             <Font size="24.0" />
          </font></TextField>
+      <Button fx:id="changeLangBut" alignment="CENTER" layoutX="509.0" layoutY="32.0" mnemonicParsing="false" onAction="#changeLang" prefHeight="30.0" prefWidth="103.0" text="Tiếng Anh">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

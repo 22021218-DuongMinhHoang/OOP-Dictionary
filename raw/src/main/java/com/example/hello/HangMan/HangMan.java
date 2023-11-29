@@ -39,7 +39,7 @@ public class HangMan {
 
         // Cách 1:return getRandomWord();
         // Cách 2:
-        dbWord = Connect.getRandomWord();
+        dbWord = Connect.getRandomWord(Connect.ANHVIET);
         return dbWord.getWord().toLowerCase();
     }
 

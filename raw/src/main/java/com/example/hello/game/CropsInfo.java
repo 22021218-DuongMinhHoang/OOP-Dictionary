@@ -25,6 +25,22 @@ public class CropsInfo {
     return name;
   }
 
+  public static String getCropVNName(CropType type) {
+    String name = "";
+    if (type == CropType.PARSNIP) {
+      name = "Củ cải";
+    } else if (type == CropType.MELON) {
+      name = "Dưa hấu";
+    } else if (type == CropType.PUMPKIN) {
+      name = "Bí ngô";
+    } else if (type == CropType.STARFRUIT) {
+      name = "Khế";
+    } else {
+      name = "Berry";
+    }
+    return name;
+  }
+
   public static int getCropTime(CropType type) {
     if (type == CropType.PARSNIP) {
       return 2;

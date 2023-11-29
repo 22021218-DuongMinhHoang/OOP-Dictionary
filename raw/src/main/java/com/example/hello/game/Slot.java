@@ -31,9 +31,9 @@ public class Slot {
     actions = new MenuButton("");
 
     plant = new SplitMenuButton();
-    plant.setText("Seeds");
+    plant.setText("Hạt giống");
 
-    harvest = new MenuItem("Harvest");
+    harvest = new MenuItem("Thu hoạch");
     harvest.setVisible(false);
 
     actions.getItems().add(harvest);
@@ -43,7 +43,7 @@ public class Slot {
     actions.getItems().add(plantBag);
 
     /** Water. */
-    water = new MenuItem("Water");
+    water = new MenuItem("Tưới nước");
     water.setVisible(false);
     water.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -59,7 +59,7 @@ public class Slot {
     actions.getItems().add(water);
 
     /** Destroy. */
-    destroy = new MenuItem("Destroy");
+    destroy = new MenuItem("Loại bỏ");
     destroy.setVisible(false);
     destroy.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -83,7 +83,7 @@ public class Slot {
   }
 
   private MenuItem newPlantItem(MenuItem pitem, CropType type) {
-    pitem = new MenuItem(CropsInfo.getCropName(type));
+    pitem = new MenuItem(CropsInfo.getCropVNName(type));
     pitem.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {

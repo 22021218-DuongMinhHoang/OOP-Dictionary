@@ -3,3 +3,7 @@ hello
 nice
 no
 hoang
+hello
+white
+tr?ng
+hoang

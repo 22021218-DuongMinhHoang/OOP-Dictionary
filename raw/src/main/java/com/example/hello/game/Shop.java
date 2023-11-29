@@ -69,7 +69,7 @@ public class Shop {
   }
 
   public void addShopOptions(CropType type, int row) {
-    Text cropName = new Text(CropsInfo.getCropName(type));
+    Text cropName = new Text(CropsInfo.getCropVNName(type));
     cropName.setStyle("-fx-font-size: 15");
 
     Button plus1 = new Button("+1");
@@ -114,7 +114,7 @@ public class Shop {
     cropNum.setStyle("-fx-font-size: 15");
     cropNum.textProperty().bind(bill.get(type).asString());
 
-    Text cropPrice = new Text();
+    Text cropPrice = new Text("0");
 
     bill.get(type).addListener(new ChangeListener<Number>() {
       @Override
