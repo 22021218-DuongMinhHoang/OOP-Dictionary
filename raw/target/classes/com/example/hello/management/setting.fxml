@@ -10,14 +10,14 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.management.SettingController">
    <children>
       <Pane fx:id="editPane" layoutX="52.0" layoutY="7.0" prefHeight="522.0" prefWidth="711.0" />
-      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="234.0" prefWidth="127.0">
+      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="211.0" prefWidth="127.0">
          <children>
             <Button mnemonicParsing="false" onAction="#openAddWord" prefHeight="31.0" prefWidth="185.0" text="addWord" />
             <Button mnemonicParsing="false" onAction="#openEditWord" prefHeight="31.0" prefWidth="184.0" text="editWord" />
             <Button mnemonicParsing="false" onAction="#openDeleteWord" prefHeight="31.0" prefWidth="143.0" text="deleteWord" />
             <Button mnemonicParsing="false" onAction="#openRestoreWord" prefHeight="31.0" prefWidth="142.0" text="restoreWord" />
-            <Button mnemonicParsing="false" onAction="#openHistory" prefHeight="45.0" prefWidth="139.0" text="Lịch sử tìm kiếm" />
-            <Button mnemonicParsing="false" onAction="#openMark" prefHeight="59.0" prefWidth="127.0" text="Từ được đánh dấu" />
+            <Button mnemonicParsing="false" onAction="#openHistory" prefHeight="38.0" prefWidth="127.0" text="History" />
+            <Button mnemonicParsing="false" onAction="#openMark" prefHeight="42.0" prefWidth="127.0" text="markedWord" />
          </children>
       </VBox>
       <Button layoutX="738.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" text="Back" />
