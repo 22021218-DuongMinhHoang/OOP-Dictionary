@@ -2,6 +2,8 @@ package com.example.hello.management;
 
 import java.io.IOException;
 
+import com.example.hello.speech.MusicPlayer;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -92,5 +94,12 @@ public class SettingController {
     editBar.setVisible(true);
     editPane.setVisible(false);
     backButton.setVisible(false);
+  }
+
+  public void muteMusic() {
+    if (MusicPlayer.getInstance().getMediaPlayer().isMute()) {
+      MusicPlayer.getInstance().getMediaPlayer().setMute(false);
+    } else
+      MusicPlayer.getInstance().getMediaPlayer().setMute(true);
   }
 }

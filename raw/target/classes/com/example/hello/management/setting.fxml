@@ -45,6 +45,11 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
+            <Button mnemonicParsing="false" onAction="#muteMusic" text="Music">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </children>

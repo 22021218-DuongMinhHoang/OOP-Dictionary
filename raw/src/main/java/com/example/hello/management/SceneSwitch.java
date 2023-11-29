@@ -58,11 +58,6 @@ public class SceneSwitch {
     }
 
     public static void changeTabHome(Tab tab) {
-        tab.getTabPane().translateYProperty().set(tab.getTabPane().getHeight());
-        Timeline timeline = new Timeline();
-        KeyValue kv = new KeyValue(tab.getTabPane().translateYProperty(), 0, Interpolator.EASE_IN);
-        KeyFrame kf = new KeyFrame(Duration.seconds(0.25), kv);
-        timeline.getKeyFrames().add(kf);
-        timeline.play();
+
     }
 }

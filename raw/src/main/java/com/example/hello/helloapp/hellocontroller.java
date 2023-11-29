@@ -29,6 +29,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import com.example.hello.speech.MusicPlayer;
 
 public class hellocontroller {
     private int oldTabIndex = 1;
@@ -211,6 +212,17 @@ public class hellocontroller {
                 oldTabIndex, 2);
         oldTabIndex = 2;
 
+        MusicPlayer.getInstance().getMediaPlayer().play();
+        MusicPlayer.getInstance().getMediaPlayer().setVolume(0.5);
+        MusicPlayer.getInstance().getMediaPlayer().setOnEndOfMedia(new Runnable() {
+
+            @Override
+            public void run() {
+                MusicPlayer.getInstance().getMediaPlayer().seek(Duration.ZERO);
+            }
+
+        });
+
         startButton.setVisible(false);
 
         TranslateTransition home = new TranslateTransition(Duration.seconds(5), mainPane);
@@ -241,7 +253,6 @@ public class hellocontroller {
                 gameLabel.setVisible(true);
                 settingsLabel.setVisible(true);
             }
-
         });
     }
 }
