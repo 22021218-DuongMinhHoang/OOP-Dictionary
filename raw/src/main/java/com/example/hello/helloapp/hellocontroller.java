@@ -12,7 +12,10 @@ import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
@@ -83,6 +86,27 @@ public class hellocontroller {
     private ImageView background;
 
     @FXML
+    private ImageView movingBackground;
+
+    @FXML
+    private Button startButton;
+
+    @FXML
+    private Label homeLabel;
+
+    @FXML
+    private Label searchLabel;
+
+    @FXML
+    private Label translateLabel;
+
+    @FXML
+    private Label gameLabel;
+
+    @FXML
+    private Label settingsLabel;
+
+    @FXML
     void Search(ActionEvent event) {
 
     }
@@ -121,6 +145,11 @@ public class hellocontroller {
 
     @FXML
     void initialize() {
+        searchLabel.setVisible(false);
+        translateLabel.setVisible(false);
+        homeLabel.setVisible(false);
+        gameLabel.setVisible(false);
+        settingsLabel.setVisible(false);
 
         assert add != null : "fx:id=\"add\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert anchorPane != null : "fx:id=\"anchorPane\" was not injected: check your FXML file 'hello-view.fxml'.";
@@ -153,7 +182,7 @@ public class hellocontroller {
 
         tabhome.setOnSelectionChanged(event -> {
             if (tabhome.isSelected()) {
-                SceneSwitch.changeTab(tabhome, "ggtranslator/SentencesTranslating.fxml",
+                SceneSwitch.changeTab(tabhome, "helloapp/tabhome.fxml",
                         oldTabIndex, 2);
                 oldTabIndex = 2;
             }
@@ -178,14 +207,41 @@ public class hellocontroller {
 
     public void start() {
         // SceneSwitch.changeTabHome(tabhome);
-        TranslateTransition home = new TranslateTransition(Duration.seconds(0.5), mainPane);
+        SceneSwitch.changeTab(tabhome, "helloapp/tabhome.fxml",
+                oldTabIndex, 2);
+        oldTabIndex = 2;
+
+        startButton.setVisible(false);
+
+        TranslateTransition home = new TranslateTransition(Duration.seconds(5), mainPane);
         home.setByY(-600);
         home.setCycleCount(1);
         home.play();
 
-        TranslateTransition image = new TranslateTransition(Duration.seconds(1), background);
+        TranslateTransition image = new TranslateTransition(Duration.seconds(5), background);
         image.setByY(304.5);
         image.setCycleCount(1);
         image.play();
+
+        image.setOnFinished(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                background.setVisible(false);
+                movingBackground.setVisible(true);
+                System.out.println("ok");
+                TranslateTransition moving = new TranslateTransition(Duration.seconds(80), movingBackground);
+                moving.setInterpolator(Interpolator.LINEAR);
+                moving.setByX(-1070);
+                moving.setCycleCount(1000);
+                moving.play();
+                searchLabel.setVisible(true);
+                translateLabel.setVisible(true);
+                homeLabel.setVisible(true);
+                gameLabel.setVisible(true);
+                settingsLabel.setVisible(true);
+            }
+
+        });
     }
 }

@@ -3,17 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.management.SettingController">
    <children>
+      <Pane layoutX="95.0" layoutY="30.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5; -fx-border-radius: 5;" />
+      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="163.0" prefWidth="127.0" />
+      <Button layoutX="359.0" layoutY="111.0" mnemonicParsing="false" onAction="#openAddWord" prefHeight="60.0" prefWidth="180.0" text="Thêm từ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="369.0" layoutY="212.0" mnemonicParsing="false" onAction="#openDeleteWord" prefHeight="60.0" prefWidth="180.0" text="Xóa từ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="370.0" layoutY="328.0" mnemonicParsing="false" onAction="#openEditWord" prefHeight="60.0" prefWidth="180.0" text="Chỉnh sửa từ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
       <Pane fx:id="editPane" layoutX="46.0" layoutY="4.0" prefHeight="522.0" prefWidth="711.0" />
-      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="163.0" prefWidth="127.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#openAddWord" text="addWord" />
-            <Button mnemonicParsing="false" onAction="#openEditWord" text="editWord" />
-            <Button mnemonicParsing="false" onAction="#openDeleteWord" text="deleteWord" />
-         </children>
-      </VBox>
-      <Button layoutX="738.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="738.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" text="Trở lại">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </Pane>

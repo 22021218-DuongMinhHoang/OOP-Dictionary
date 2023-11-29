@@ -11,10 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.searchbar.SearchController">
    <children>
-      <Pane layoutX="85.0" layoutY="20.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5;" />
+      <Pane layoutX="85.0" layoutY="20.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5; -fx-border-radius: 5;" />
       <Pane prefHeight="563.0" prefWidth="728.0">
          <children>
             <Pane layoutX="165.0" layoutY="96.0" prefHeight="420.0" prefWidth="570.0" style="-fx-border-color: rgb(201, 117, 31); -fx-background-color: white; -fx-border-width: 3; -fx-border-radius: 5;">
@@ -34,8 +35,14 @@
                      <children>
                         <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#usSound" prefHeight="60.0" prefWidth="123.0" styleClass="button_speak" />
                         <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#ukSound" prefHeight="60.0" prefWidth="123.0" styleClass="button_speak" GridPane.rowIndex="1" />
-                        <Label text="US" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                        <Label layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER_RIGHT" text="US" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
                   <ScrollPane layoutX="45.0" layoutY="84.0" prefHeight="290.0" prefWidth="480.0" style="-fx-border-color: white; -fx-background-color: white;">
@@ -48,6 +55,9 @@
             </Pane>
          </children>
       </Pane>
-      <Button fx:id="changeTranslate" layoutX="744.0" layoutY="50.0" mnemonicParsing="false" style="-fx-border-radius: 5;" styleClass="button_change" text="EN - VI" />
+      <Button fx:id="changeTranslate" layoutX="744.0" layoutY="50.0" mnemonicParsing="false" style="-fx-border-radius: 5;" styleClass="button_change" text="EN - VI">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>
