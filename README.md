@@ -25,4 +25,14 @@ Bài tập trong môn Lập trình hướng đối tượng UET - VNU
 - Nguồn Tài Liệu Uy Tín: Sử dụng các nguồn tài liệu uy tín được thế giới sử dụng rộng rãi để đảm bảo chất lượng và độ chính xác của thông tin từ vựng cung cấp.
 ## Giải trí
 - Ngoài phần từ điển, hệ thống còn có game học từ vựng **HangMan** và **Multiple Choices** 
-
+### Hướng dẫn chơi game:
+- Người chơi có 6 ô đất để trồng cây.
+- Người chơi có thể vào cửa hàng để mua **hạt giống**.
+- Có 5 loại cây có thể trồng **Củ cải, Dưa hấu, Bí ngô, Khế, Berry** có giá trị khác nhau.
+- Trồng cây thì cũng phải tưới cây.
+- Tưới xong thì có thể sang ngày mới, sang ngày mới mà cây không được tưới sẽ bị héo.
+- Sang ngày mới thì phải chơi trò **HangMan**, nếu thua sẽ có cây héo.
+- Mỗi cây có thời gian trồng riêng, giá trị càng cao thì lớn càng lâu.
+- Cây lớn có thể thu hoạch, khi đó sẽ phải chơi **Multiple Choices**, trả lời đúng càng nhiều thì càng nhận được nhiều sản phẩm.
+- Sản phẩm thu hoạch sẽ vào trong kho.
+- Có thể vào của hàng để bán sản phẩm, nhấn + hoặc - để thay đổi số lượng hàng, số lượng hàng có giá trị âm là đang bán, nhấn **Mua** để bán, số lượng dương thì là đang mua, nhấn **Mua** để mua.
