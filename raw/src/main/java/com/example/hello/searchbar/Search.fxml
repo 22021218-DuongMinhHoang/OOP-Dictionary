@@ -14,13 +14,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.searchbar.SearchController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <Pane layoutX="85.0" layoutY="20.0" prefHeight="530.0" prefWidth="730.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5;" />
+      <Pane prefHeight="563.0" prefWidth="728.0">
          <children>
-            <Pane layoutX="165.0" layoutY="110.0" prefHeight="400.0" prefWidth="570.0" style="-fx-background-color: rgb(255, 255, 146); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5;">
+            <Pane layoutX="165.0" layoutY="96.0" prefHeight="420.0" prefWidth="570.0" style="-fx-border-color: rgb(201, 117, 31); -fx-background-color: white; -fx-border-width: 3; -fx-border-radius: 5;">
                <children>
                   <VBox fx:id="wordBox" alignment="TOP_CENTER" layoutX="180.0" layoutY="10.0" prefHeight="50.0" prefWidth="210.0" spacing="10.0" />
                   <VBox fx:id="desBox2" layoutX="285.0" layoutY="80.0" prefHeight="310.0" prefWidth="200.0" />
-                  <TextField fx:id="searchBar" layoutY="-70.0" prefHeight="52.0" prefWidth="570.0" styleClass="field" />
+                  <TextField fx:id="searchBar" layoutY="-46.0" prefHeight="25.0" prefWidth="570.0" style="-fx-border-radius: 5; -fx-background-color: transparent; -fx-background-color: white;" styleClass="field" />
                   <GridPane fx:id="soundPane" layoutX="450.0" layoutY="10.0" prefHeight="70.0" prefWidth="70.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="36.0" />
@@ -31,22 +32,22 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#usSound" prefHeight="38.0" prefWidth="36.0" styleClass="button_speak" />
+                        <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#usSound" prefHeight="60.0" prefWidth="123.0" styleClass="button_speak" />
                         <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#ukSound" prefHeight="60.0" prefWidth="123.0" styleClass="button_speak" GridPane.rowIndex="1" />
-                        <Label text="US" textFill="#e8850d" GridPane.columnIndex="1" />
-                        <Label layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="US" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Label layoutX="46.0" layoutY="19.0" text="UK" textFill="#e8850d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <ScrollPane layoutX="45.0" layoutY="84.0" prefHeight="290.0" prefWidth="480.0" style="-fx-background-color: rgb(255, 255, 146);">
+                  <ScrollPane layoutX="45.0" layoutY="84.0" prefHeight="290.0" prefWidth="480.0" style="-fx-border-color: white; -fx-background-color: white;">
                      <content>
-                        <VBox fx:id="desBox1" alignment="TOP_RIGHT" prefHeight="288.0" prefWidth="477.0" style="-fx-background-color: rgb(255, 255, 146);" />
+                        <VBox fx:id="desBox1" alignment="TOP_RIGHT" prefHeight="285.0" prefWidth="474.0" style="-fx-border-color: white; -fx-background-color: white;" />
                      </content>
                   </ScrollPane>
-                  <ListView fx:id="optionsBox" layoutX="5.0" layoutY="-23.0" maxHeight="-Infinity" prefHeight="17.0" prefWidth="560.0" />
+                  <ListView fx:id="optionsBox" layoutX="11.0" layoutY="-16.0" maxHeight="-Infinity" prefHeight="3.0" prefWidth="548.0" />
                </children>
             </Pane>
          </children>
       </Pane>
-      <Button fx:id="changeTranslate" layoutX="744.0" layoutY="50.0" mnemonicParsing="false" text="EN - VI" />
+      <Button fx:id="changeTranslate" layoutX="744.0" layoutY="50.0" mnemonicParsing="false" style="-fx-border-radius: 5;" styleClass="button_change" text="EN - VI" />
    </children>
 </AnchorPane>

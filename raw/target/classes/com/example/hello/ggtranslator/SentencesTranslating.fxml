@@ -9,7 +9,17 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.ggtranslator.SentencesTranslating">
    <children>
-       <Label fx:id="upButton" alignment="CENTER" layoutX="165.0" layoutY="45.0" prefHeight="35.0" prefWidth="120.0" styleClass="label-language" text="English" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+      <Pane layoutX="25.0" layoutY="20.0" prefHeight="530.0" prefWidth="850.0" style="-fx-background-color: rgb(255, 255, 170); -fx-border-color: rgb(201, 117, 31); -fx-border-width: 5;" />
+       <Button fx:id="voiceButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="309.0" layoutY="40.0" mnemonicParsing="false" onAction="#textToSpeech" prefHeight="45.0" prefWidth="53.0">
+           <font>
+               <Font size="14.0" />
+           </font>
+         <styleClass>
+            <String fx:value="button-sound" />
+            <String fx:value="button-all" />
+         </styleClass>
+       </Button>
+       <Label fx:id="upButton" alignment="CENTER" layoutX="165.0" layoutY="45.0" prefHeight="35.0" prefWidth="120.0" styleClass="label-language" text="Tiếng Anh" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
            <font>
                <Font name="Arial Bold" size="17.0" />
            </font>
@@ -19,16 +29,7 @@
                <Font size="18.0" />
            </font>
        </TextArea>
-       <Button fx:id="voiceButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="317.0" layoutY="14.0" mnemonicParsing="false" onAction="#textToSpeech" prefHeight="65.0" prefWidth="70.0">
-           <font>
-               <Font size="14.0" />
-           </font>
-         <styleClass>
-            <String fx:value="button-sound" />
-            <String fx:value="button-all" />
-         </styleClass>
-       </Button>
-       <TextArea fx:id="sourceText" layoutX="50.0" layoutY="95.0" prefHeight="425.0" prefWidth="350.0" promptText="Enter text to translate..." styleClass="text-area" wrapText="true">
+       <TextArea fx:id="sourceText" layoutX="50.0" layoutY="95.0" prefHeight="425.0" prefWidth="350.0" promptText="Nhập văn bản để dịch..." styleClass="text-area" wrapText="true">
            <font>
                <Font size="18.0" />
            </font>
@@ -42,7 +43,7 @@
             <String fx:value="button-all" />
          </styleClass>
        </Button>
-       <Button fx:id="alterButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="412.0" layoutY="37.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="75.0" prefWidth="75.0" style="-fx-background-position: center;">
+       <Button fx:id="alterButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="420.0" layoutY="37.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="60.0" prefWidth="60.0" style="-fx-background-position: center; -fx-background-size: cover;">
            <font>
                <Font size="14.0" />
            </font>
@@ -51,7 +52,7 @@
             <String fx:value="button-all" />
          </styleClass>
        </Button>
-       <Label fx:id="downButton" alignment="CENTER" layoutX="615.0" layoutY="45.0" prefHeight="35.0" prefWidth="120.0" styleClass="label-language" text="Vietnamese" textAlignment="CENTER">
+       <Label fx:id="downButton" alignment="CENTER" layoutX="615.0" layoutY="45.0" prefHeight="35.0" prefWidth="120.0" styleClass="label-language" text="Tiếng Việt" textAlignment="CENTER">
            <font>
                <Font name="Arial Bold" size="17.0" />
            </font>

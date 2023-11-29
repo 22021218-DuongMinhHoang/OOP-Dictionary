@@ -23,6 +23,8 @@ public class Shop {
 
   public Shop() {
     shop = new GridPane();
+    shop.setHgap(10);
+    shop.setVgap(10);
 
     bill = new Hashtable<>();
     bill.put(CropType.PARSNIP, new SimpleIntegerProperty(0));
@@ -45,7 +47,7 @@ public class Shop {
 
     // shop.add(sumText, 5, 5);
 
-    Button exchange = new Button("Exchange");
+    Button exchange = new Button("Mua");
 
     exchange.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -60,7 +62,7 @@ public class Shop {
 
     });
 
-    shop.add(exchange, 6, 5);
+    shop.add(exchange, 5, 5);
 
     back = new Button();
     shop.add(back, 0, 5);

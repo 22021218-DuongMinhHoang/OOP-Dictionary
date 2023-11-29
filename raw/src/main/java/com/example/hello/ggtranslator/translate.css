@@ -1,22 +1,23 @@
 .text-area {
     -fx-background-color: rgb(255, 255, 146);
     -fx-border-color: rgb(201, 117, 31);
-    -fx-border-width: 5;
+    -fx-border-width: 3;
     -fx-text-fill: brown;
+    -fx-border-radius: 5;
 }
 
 .button-sound {
     -fx-background-color: rgb(255, 255, 146, 0);
     -fx-background-image: url(resources/icons/speaker.png);
     -fx-background-size: cover;
-
 }
 
 .label-language {
-    -fx-background-color: rgb(255, 255, 146);
+    -fx-background-color: white;
     -fx-border-color: rgb(201, 117, 31);
     -fx-border-width: 2;
     -fx-text-fill: brown;
+    -fx-border-radius: 5;
 }
 
 .button-translate {

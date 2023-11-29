@@ -83,7 +83,6 @@ public class HangManGameController extends HangMan {
         setStyle();
         play();
         labelBrighten();
-
     }
 
     @FXML
@@ -102,14 +101,14 @@ public class HangManGameController extends HangMan {
                     if (showWinPane()) {
                         try {
                             new SceneSwitch(pane, "HangMan/game.fxml");
-                            pane.getParent().getParent().setVisible(false);
+                            pane.getParent().setVisible(false);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
                     } else {
                         try {
                             new SceneSwitch(pane, "HangMan/menu.fxml");
-                            pane.getParent().getParent().setVisible(false);
+                            pane.getParent().setVisible(false);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -130,7 +129,7 @@ public class HangManGameController extends HangMan {
                         if (showLosePane()) {
                             try {
                                 new SceneSwitch(pane, null);
-                                pane.getParent().getParent().setVisible(false);
+                                pane.getParent().setVisible(false);
                                 Inventory.getInstance().getBadDays().add(1);
                             } catch (IOException ex) {
                                 ex.printStackTrace();
@@ -138,7 +137,7 @@ public class HangManGameController extends HangMan {
                         } else {
                             try {
                                 new SceneSwitch(pane, null);
-                                pane.getParent().getParent().setVisible(false);
+                                pane.getParent().setVisible(false);
                                 Inventory.getInstance().getBadDays()
                                         .set(Inventory.getInstance().getBadDays().get() + 1);
                             } catch (IOException ex) {
@@ -224,7 +223,7 @@ public class HangManGameController extends HangMan {
                 });
 
                 label.setOnMouseExited(event -> {
-                    label.setStyle("-fx-background-color: #FFDEAD;");
+                    label.setStyle("-fx-background-color: transparent;");
                 });
 
                 label.setOnMouseClicked(event -> {
@@ -234,13 +233,24 @@ public class HangManGameController extends HangMan {
         }
     }
 
-    private void setStyle() {
-        pane.setStyle("-fx-background-color: bisque;");
-        setPaneColor();
-        label.setStyle("-fx-background-color: white;");
-        secret.setStyle("-fx-background-color: white; -fx-letter-spacing: 1.5em; ");
+    public void buttonMouseEntered() {
         button.setStyle(
-                "-fx-background-color: #EEE8AA; -fx-text-fill: black; -fx-font-size: 18px; -fx-font-weight: bold;");
+                "-fx-background-color: white; -fx-border-color:  rgb(201, 117, 31); -fx-border-width: 3; -fx-border-radius: 5;");
+    }
+
+    public void buttonMouseExited() {
+        button.setStyle(
+                "-fx-background-color: white; -fx-border-color:  rgb(201, 117, 31); -fx-border-width: 2; -fx-border-radius: 5;");
+    }
+
+    private void setStyle() {
+        // pane.setStyle("-fx-background-color: bisque;");
+        // setPaneColor();
+        // label.setStyle("-fx-background-color: white;");
+        // secret.setStyle("-fx-background-color: white; -fx-letter-spacing: 1.5em; ");
+        // button.setStyle(
+        // "-fx-background-color: #EEE8AA; -fx-text-fill: black; -fx-font-size: 18px;
+        // -fx-font-weight: bold;");
     }
 
     // private void searchAndDisplayImage(String keyword) {

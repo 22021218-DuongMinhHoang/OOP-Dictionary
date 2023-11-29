@@ -1,7 +1,8 @@
 .button {
-    -fx-background-color:  rgb(255, 255, 146);
+    -fx-background-color:  white;
     -fx-border-color:  rgb(201, 117, 31);
     -fx-border-width: 2;
+    -fx-border-radius: 5;
 }
 
 .button:hover {
@@ -12,16 +13,18 @@
     -fx-border-color:  rgb(201, 117, 31);
 }
 
-
-.menu-item {
-    -fx-background-color:  rgb(255, 255, 146);
-}
-
 .menu-item:hover {
     -fx-border-color:  rgb(201, 117, 31);
+}
+
+
+.label {
     -fx-text-fill: brown;
 }
 
-.menu-bar {
-    -fx-background-color:  rgb(255, 255, 146);
+#shopPane {
+    -fx-background-color:  white;
+    -fx-border-color:  rgb(201, 117, 31);
+    -fx-border-width: 4;
+    -fx-border-radius: 5;
 }

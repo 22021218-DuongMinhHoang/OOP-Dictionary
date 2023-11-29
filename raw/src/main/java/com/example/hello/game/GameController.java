@@ -15,6 +15,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Side;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -179,7 +180,7 @@ public class GameController implements Initializable {
     }
     try {
       hangman.setVisible(true);
-      SceneSwitch.changeScene(hangman, "HangMan/menu.fxml");
+      SceneSwitch.changeScene(hangman, "HangMan/game.fxml");
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -245,6 +246,9 @@ public class GameController implements Initializable {
       shopPane.setVisible(true);
       Shop shop = new Shop();
       shopPane.getChildren().add(shop.getShop());
+      shop.getShop().setPrefSize(shopPane.getPrefWidth(), shopPane.getPrefHeight());
+      shop.getShop().setPadding(new Insets(45, 10, 10, 42));
+      shop.getBackButton().setText("Quay lại");
       shop.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {

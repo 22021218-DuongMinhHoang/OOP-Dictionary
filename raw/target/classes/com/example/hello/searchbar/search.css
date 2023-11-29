@@ -4,7 +4,6 @@
 }
 
 .list-cell { /* <=== changed to even */
-    -fx-background-color: rgb(255, 255, 146);
     -fx-text-fill: brown;
 }
 
@@ -13,9 +12,8 @@
 }
 
 .field {
-    -fx-background-color: rgb(255, 255, 146);
     -fx-border-color: rgb(201, 117, 31);
-    -fx-border-width: 5;
+    -fx-border-width: 3;
     -fx-text-fill: brown;
 }
 
@@ -24,7 +22,7 @@
 }
 
 .button_speak {
-    -fx-background-color: rgb(255, 255, 146);
+    -fx-background-color: transparent;
     -fx-background-image: url(resources/icons/speaker.png);
     -fx-background-size: cover;
 }
@@ -32,4 +30,16 @@
 .button_speak:hover {
     -fx-border-color: rgb(201, 117, 31);
     -fx-border-width: 2;
+}
+
+.button_change {
+    -fx-background-color: white;
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 2;
+    -fx-text-fill: brown;
+}
+
+.button_change:hover {
+    -fx-border-color: rgb(201, 117, 31);
+    -fx-border-width: 3;
 }
