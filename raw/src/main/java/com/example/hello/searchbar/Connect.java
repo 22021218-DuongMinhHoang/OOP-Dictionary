@@ -366,6 +366,116 @@ public class Connect {
     }
   }
 
+  public static List<String> deletedWords(String table) {
+    List<String> result = new ArrayList<>();
+
+    try {
+      String sql = "SELECT word FROM " + table + " WHERE isdelete = 1";
+      try (Connection conn = connect();
+          PreparedStatement preparedStatement = conn.prepareStatement(sql);
+          ResultSet resultSet = preparedStatement.executeQuery()) {
+
+        while (resultSet.next()) {
+          String word = resultSet.getString("word");
+          result.add(word);
+        }
+
+        if (!result.isEmpty()) {
+          System.out.println("Restoration successful for " + result.size() + " words.");
+        } else {
+          System.out.println("No words found for restoration.");
+        }
+      } catch (SQLException e) {
+        System.out.println("Error executing SQL: " + e.getMessage());
+        // Handle the exception according to your needs
+      }
+    } catch (Exception e) {
+      // TODO: handle exception
+    }
+
+    return result;
+  }
+
+  public static void markWord(String wordToMark, String table) {
+    wordToMark = wordToMark.toLowerCase();
+    if (doesWordExist(wordToMark, table)) {
+      try {
+        if (checkCommand(table)) {
+          String sql = "UPDATE " + table + " SET isMarked = 1 WHERE word = ?";
+          try (Connection conn = connect();
+              PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, wordToMark);
+            // Execute the update and check if one row was deleted
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+              System.out.println("Mark successful! in table " + table);
+            } else {
+              System.out.println("Word not found or Mark failed!in table " + table);
+            }
+          } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
+            // Handle the exception according to your needs
+          }
+        }
+      } catch (WrongCommandException e) {
+        System.out.println("Wrong command: " + e.getMessage());
+        // Handle the exception according to your needs
+      }
+    }
+  }
+
+  public static List<String> getMarkedWords(String table) {
+    List<String> markedWords = new ArrayList<>();
+
+    try {
+      String sql = "SELECT word FROM " + table + " WHERE isMarked = 1";
+
+      try (Connection conn = connect();
+          PreparedStatement preparedStatement = conn.prepareStatement(sql);
+          ResultSet resultSet = preparedStatement.executeQuery()) {
+
+        while (resultSet.next()) {
+          String word = resultSet.getString("word");
+          markedWords.add(word);
+        }
+
+      } catch (SQLException e) {
+        System.out.println("Error executing SQL: " + e.getMessage());
+        // Handle the exception according to your needs
+      }
+
+    } catch (Exception e) {
+      // TODO: handle exception
+    }
+
+    return markedWords;
+  }
+
+  public static void unmarkAllWords(String table) {
+    try {
+        String sql = "UPDATE " + table + " SET isMarked = 0";
+
+        try (Connection conn = connect();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+
+            // Execute the update and check if any row was updated
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Unmarking successful for " + rowsAffected + " words in table " + table);
+            } else {
+                System.out.println("No words found to unmark in table " + table);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error executing SQL: " + e.getMessage());
+            // Handle the exception according to your needs
+        }
+
+    } catch (Exception e) {
+        // TODO: handle exception
+    }
+}
+
   /**
    * @param args the command line arguments
    */

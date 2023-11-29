@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.markedWord.MarkController">
+   <children>
+      <ListView fx:id="listView" layoutX="26.0" layoutY="72.0" prefHeight="462.0" prefWidth="320.0" />
+      <Label alignment="CENTER" layoutX="269.0" layoutY="20.0" prefHeight="41.0" prefWidth="197.0" text="Các từ yêu thích">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="wordDisplay" alignment="CENTER" layoutX="367.0" layoutY="100.0" prefHeight="266.0" prefWidth="270.0" />
+      <Button fx:id="langChangeBut" layoutX="513.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeLang" text="Tiếng Anh" />
+   </children>
+</Pane>

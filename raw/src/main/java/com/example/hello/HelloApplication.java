@@ -14,10 +14,13 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // myDict.addFromFile("src\\main\\java\\com\\example\\hello\\data\\dictionaries.txt");
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
-                "helloapp\\hello-view.fxml"));
-        // FXMLLoader fxmlLoader = new
-        // FXMLLoader(HelloApplication.class.getResource("SearchBar/Search.fxml"));
+         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                 "helloapp\\hello-view.fxml"));
+         //FXMLLoader fxmlLoader = new
+        // FXMLLoader(HelloApplication.class.getResource("restoreword//restore.fxml"));
+        // FXMLLoader(HelloApplication.class.getResource("markedWord/mark.fxml"));
+        //E:\study_document\JAVA\OOP-Dictionary\raw\src\main\java\com\example\hello\markedWord\mark.fxml
+        //FXMLLoader(HelloApplication.class.getResource("history/history.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         String tab = getClass().getResource("helloapp\\tab.css").toExternalForm();

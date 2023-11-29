@@ -19,10 +19,12 @@ import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Orientation;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -31,8 +33,10 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 
 import com.example.hello.data.Word;
+import com.example.hello.history.HistoryController;
 import com.example.hello.speech.SoundPlayer;
 
 public class SearchController implements Initializable {
@@ -95,6 +99,7 @@ public class SearchController implements Initializable {
       @Override
       public void changed(ObservableValue<? extends Word> observable, Word oldValue, Word newValue) {
         currentWord = newValue;
+        HistoryController.writeWordsToFile(currentWord.getWord(),translateEnVi? Connect.ANHVIET: Connect.VIETANH);
         if (optionsBox.getItems().size() != 0) {
           // searchResult.setText(newValue.getFullDescription());
           List<String> desList = newValue.getDescriptionList();
@@ -191,4 +196,22 @@ public class SearchController implements Initializable {
       System.out.println("null");
     }
   }
+
+  @FXML
+  void mark(ActionEvent event) {
+    Connect.markWord(currentWord.getWord(), translateEnVi ? Connect.ANHVIET : Connect.VIETANH);
+    showAlert("Thành công", "Đã thêm từ '" + currentWord.getWord() +"' vào mục yêu thích", "images/success.png");
+
+  }
+  private void showAlert(String title, String content, String iconPath) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        Image icon = new Image(getClass().getResource(iconPath).toExternalForm());
+        stage.getIcons().add(icon);
+        alert.showAndWait();
+    }
+
 }

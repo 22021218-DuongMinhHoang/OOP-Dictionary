@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.management.SettingController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.management.SettingController">
    <children>
-      <Pane fx:id="editPane" layoutX="46.0" layoutY="4.0" prefHeight="522.0" prefWidth="711.0" />
-      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="163.0" prefWidth="127.0">
+      <Pane fx:id="editPane" layoutX="52.0" layoutY="7.0" prefHeight="522.0" prefWidth="711.0" />
+      <VBox fx:id="editBar" layoutX="357.0" layoutY="134.0" prefHeight="234.0" prefWidth="127.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#openAddWord" text="addWord" />
-            <Button mnemonicParsing="false" onAction="#openEditWord" text="editWord" />
-            <Button mnemonicParsing="false" onAction="#openDeleteWord" text="deleteWord" />
+            <Button mnemonicParsing="false" onAction="#openAddWord" prefHeight="31.0" prefWidth="185.0" text="addWord" />
+            <Button mnemonicParsing="false" onAction="#openEditWord" prefHeight="31.0" prefWidth="184.0" text="editWord" />
+            <Button mnemonicParsing="false" onAction="#openDeleteWord" prefHeight="31.0" prefWidth="143.0" text="deleteWord" />
+            <Button mnemonicParsing="false" onAction="#openRestoreWord" prefHeight="31.0" prefWidth="142.0" text="restoreWord" />
+            <Button mnemonicParsing="false" onAction="#openHistory" prefHeight="45.0" prefWidth="139.0" text="Lịch sử tìm kiếm" />
+            <Button mnemonicParsing="false" onAction="#openMark" prefHeight="59.0" prefWidth="127.0" text="Từ được đánh dấu" />
          </children>
       </VBox>
       <Button layoutX="738.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" text="Back" />
