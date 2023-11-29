@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -12,38 +13,55 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.helloapp.hellocontroller">
   <children>
-    <Pane fx:id="pane" prefHeight="602.0" prefWidth="900.0" visible="false">
-         <children>
-        <ImageView fx:id="start" fitHeight="142.0" fitWidth="357.0" onMouseClicked="#startprogram" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../resources/com/example/hello/assets/start.png" />
-               </image>
-        </ImageView>
-         </children>
-    </Pane>
-      <TabPane prefHeight="600.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="background" fitHeight="904.5" fitWidth="1570.5" layoutY="-304.5" pickOnBounds="true">
+         <image>
+            <Image url="@resources/icons/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movingBackground" fitHeight="600.0" fitWidth="2016.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@resources/icons/moving_background.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="startButton" layoutX="417.0" layoutY="283.0" mnemonicParsing="false" onAction="#start" prefHeight="37.0" prefWidth="74.0" style="-fx-text-fill: brown;" text="Start">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TabPane fx:id="mainPane" layoutY="600.0" prefHeight="600.0" prefWidth="900.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinHeight="60.0" tabMinWidth="50.0">
         <tabs>
-          <Tab closable="false" text="Untitled Tab 1" />
-          <Tab fx:id="t1" text="Untitled Tab 2">
+            <Tab fx:id="tabsearch" closable="false">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Pane fx:id="search" prefHeight="600.0" prefWidth="872.0">
-                           <children>
-                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="87.0" prefWidth="674.0" text="Welcome to Hello Dictionary" textFill="#41cc00" wrapText="true">
-                            <font>
-                              <Font name="Arial Bold" size="40.0" />
-                            </font>
-                          </Label>
-                           </children>
-                        </Pane>
-                     </children>
-                  </AnchorPane>
+                  <Pane fx:id="search" />
+               </content>
+            </Tab>
+            <Tab fx:id="tabtranslate">
+               <content>
+                  <Pane fx:id="translate" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="tabhome" closable="false">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="900.0" />
                </content></Tab>
+            <Tab fx:id="tabgame">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="tabsetting">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
         </tabs>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TabPane>
+      <Label fx:id="searchLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="520.0" prefHeight="21.0" prefWidth="60.0" style="-fx-background-color: rgb(255, 243, 160); -fx-border-color: rgb(201, 117, 31); -fx-border-radius: 3; -fx-border-width: 2;" text="TÌm kiếm" />
+      <Label fx:id="translateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="353.0" layoutY="520.0" prefHeight="21.0" prefWidth="60.0" style="-fx-background-color: rgb(255, 243, 160); -fx-border-color: rgb(201, 117, 31); -fx-border-radius: 3; -fx-border-width: 2;" text="Dịch" />
+      <Label fx:id="homeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="415.0" layoutY="520.0" prefHeight="21.0" prefWidth="60.0" style="-fx-background-color: rgb(255, 243, 160); -fx-border-color: rgb(201, 117, 31); -fx-border-radius: 3; -fx-border-width: 2;" text="Nhà" />
+      <Label fx:id="gameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="477.0" layoutY="520.0" prefHeight="21.0" prefWidth="60.0" style="-fx-background-color: rgb(255, 243, 160); -fx-border-color: rgb(201, 117, 31); -fx-border-radius: 3; -fx-border-width: 2;" text="Game" />
+      <Label fx:id="settingsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="539.0" layoutY="520.0" prefHeight="21.0" prefWidth="60.0" style="-fx-background-color: rgb(255, 243, 160); -fx-border-color: rgb(201, 117, 31); -fx-border-radius: 3; -fx-border-width: 2;" text="Cài đặt" />
   </children>
 </AnchorPane>

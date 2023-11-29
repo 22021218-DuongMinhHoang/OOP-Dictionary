@@ -74,11 +74,11 @@ public class SentencesTranslating {
     public void swapLanguage() {
         enToVi = !enToVi;
         if (enToVi) {
-            upButton.setText("English");
-            downButton.setText("Vietnamese");
+            upButton.setText("Tiếng Anh");
+            downButton.setText("Tiếng Việt");
         } else {
-            upButton.setText("Vietnamese");
-            downButton.setText("English");
+            upButton.setText("Tiếng Việt");
+            downButton.setText("Tiếng Anh");
         }
         if (sinkText.getText() != null) {
             String tmp = sinkText.getText();

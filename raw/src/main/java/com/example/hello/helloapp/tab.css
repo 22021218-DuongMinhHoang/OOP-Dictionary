@@ -1,53 +1,101 @@
-* {
-	-fx-primary-color: #007acc;
-	-fx-secondary-color: #4B6EAF;
-
-	-fx-focus-color: -fx-secondary-color;
-}
-
-.tab-pane .tab:hover {
-	-fx-background-color: -fx-secondary-color;
-}
-
-.tab-header-area .tab-header-background {
- 	-fx-background-color: -fx-primary-color;
-}
-.tab-pane .tab:selected {
-	-fx-background-color: -fx-secondary-color;
-	-fx-background-insets: 0 0 0 0;
-	-fx-background-radius: 0 0 0 0;
-}
-.tab .tab-label { 
- 	-fx-alignment: CENTER;
-	-fx-text-fill: white;
-	-fx-font-weight: bold;
-	-fx-padding: 0 10 0 10;
-}
-.tab-pane:top *.tab-header-area {
-	-fx-padding: 0 0 0 30;
-	
-}
 .tab-pane {
 	-fx-background-color: transparent;
-	-fx-tab-min-width: 100px;
-	-fx-tab-min-height: 66px;
-	-fx-tab-max-height: 66px;
 }
-.tab-pane .tab {
-	-fx-background-color: transparent;
-}
+
 .tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
  	-fx-border-width: 0;
 	-fx-border-insets: 0 0 0 0;
 	-fx-border-radius: 0;
-} 
+}
 
-/* .tab-pane .tab:hover {
-	-fx-background-color: #4B6EAF;
-	-fx-pref-height: 40;
+.tab-pane .tab-header-area {
+	-fx-padding: 0 325 0 290;
+}
+
+.tab-header-area .tab-header-background {
+	-fx-background-color: rgb(255, 243, 146);
 }
 
 .tab {
-	-fx-background-image: url(resources/buttonFrame.png), url(resources/icons/Google.png);
+	-fx-background-color: rgb(255, 243, 146);
+	-fx-background-image: url(resources/icons/Google.png);
 	-fx-background-size: cover;
-}*/
+	-fx-rotate: 180;
+}
+
+#tabsearch {
+	-fx-background-image: url(resources/icons/Google.png);
+	-fx-background-size: cover;
+}
+
+#tabsearch:hover {
+	-fx-background-image: url(resources/icons/Google_hover.png);
+}
+
+#tabsearch:selected {
+	-fx-background-image: url(resources/icons/Google_hover.png);
+}
+
+#tabhome {
+	-fx-background-image: url(resources/icons/Home.png);
+	-fx-background-size: cover;
+}
+
+#tabhome:hover {
+	-fx-background-image: url(resources/icons/Home_hover.png);
+} 
+
+#tabhome:selected {
+	-fx-background-image: url(resources/icons/Home_hover.png);
+}
+
+#tabtranslate {
+	-fx-background-image: url(resources/icons/Translate.png);
+	-fx-background-size: cover;
+}
+
+#tabtranslate:hover {
+	-fx-background-image: url(resources/icons/Translate_hover.png);
+} 
+
+#tabtranslate:selected {
+	-fx-background-image: url(resources/icons/Translate_hover.png);
+}
+
+#tabgame {
+	-fx-background-image: url(resources/icons/Game.png);
+	-fx-background-size: cover;
+}
+
+#tabgame:hover {
+	-fx-background-image: url(resources/icons/Game_hover.png);
+} 
+
+#tabgame:selected {
+	-fx-background-image: url(resources/icons/Game_hover.png);
+}
+
+#tabsetting {
+	-fx-background-image: url(resources/icons/Settings.png);
+	-fx-background-size: cover;
+}
+
+#tabsetting:hover {
+	-fx-background-image: url(resources/icons/Settings_hover.png);
+} 
+
+#tabsetting:selected {
+	-fx-background-image: url(resources/icons/Settings_hover.png);
+}
+
+
+#startButton {
+	-fx-background-color:  rgb(255,255,160);
+    -fx-border-color:  rgb(201, 117, 31);
+    -fx-border-width: 2;
+    -fx-border-radius: 3;
+}
+
+#startButton:hover {
+	-fx-border-color:  brown;
+}

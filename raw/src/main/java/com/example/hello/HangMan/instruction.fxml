@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hello.HangMan.InstructionController">
+   <children>
+      <VBox layoutX="33.0" layoutY="73.0" prefHeight="337.0" prefWidth="709.0">
+         <children>
+            <Label prefHeight="40.0" prefWidth="709.0" text="Một từ vựng sẽ được chọn và ẩn đi. Mỗi ký tự sẽ được thay thế bằng dấu gạch dưới &quot;_&quot;." />
+            <Label prefHeight="40.0" prefWidth="748.0" text="Người chơi đoán một chữ cái mỗi lượt" />
+            <Label prefHeight="40.0" prefWidth="712.0" text="Nếu chữ cái đoán đúng, nó sẽ được hiển thị ở vị trí tương ứng trong từ vựng." />
+            <Label prefHeight="40.0" prefWidth="708.0" text="Nếu chữ cái đoán sai, số  lượt đoán sai tăng lên. Một phần của cây treo sẽ được vẽ lên." textOverrun="CLIP" />
+            <Label layoutX="10.0" layoutY="155.0" prefHeight="40.0" prefWidth="718.0" text="Người chơi chỉ có 7 lượt đoán sai trước khi trò chơi kết thúc." textOverrun="CLIP" />
+            <Label layoutX="10.0" layoutY="223.0" prefHeight="40.0" prefWidth="713.0" text="Khi tất cả các chữ cái đã được đoán đúng và từ vựng được hoàn thành, thông báo chiến thắng sẽ xuất hiện." textOverrun="CLIP" />
+            <Label layoutX="10.0" layoutY="291.0" prefHeight="40.0" prefWidth="713.0" text="Nếu số lượng lượt đoán sai đạt đến 7, thông báo thất bại sẽ xuất hiện và từ vựng sẽ được hiển thị." textOverrun="CLIP" />
+            <Label layoutX="10.0" layoutY="359.0" prefHeight="40.0" prefWidth="713.0" text="Người chơi có thể chọn chơi lại để bắt đầu một ván mới." textOverrun="CLIP" />
+         </children>
+      </VBox>
+      <Label layoutX="324.0" layoutY="31.0" text="Hướng dẫn ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="344.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#back" text="Trở lại" />
+   </children>
+</Pane>
